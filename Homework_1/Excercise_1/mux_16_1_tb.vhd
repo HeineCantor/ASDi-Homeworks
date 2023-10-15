@@ -8,55 +8,21 @@ end mux_16_1_tb;
 architecture behavioral of mux_16_1_tb is
 
     component mux_16_1
-        port (b0  : in std_logic;
-              b1  : in std_logic;
-              b2  : in std_logic;
-              b3  : in std_logic;
-              b4  : in std_logic;
-              b5  : in std_logic;
-              b6  : in std_logic;
-              b7  : in std_logic;
-              b8  : in std_logic;
-              b9  : in std_logic;
-              b10 : in std_logic;
-              b11 : in std_logic;
-              b12 : in std_logic;
-              b13 : in std_logic;
-              b14 : in std_logic;
-              b15 : in std_logic;
-              s0  : in std_logic;
-              s1  : in std_logic;
-              s2  : in std_logic;
-              s3  : in std_logic;
-              y0   : out std_logic);
+        port(   
+            b    : in std_logic_vector(0 to 15);
+            s    : in std_logic_vector(0 to 3);
+            y0   : out std_logic
+        );
     end component;
 
-    signal input    : STD_LOGIC_VECTOR (0 to 15)    := (others => '0');
-    signal control  : STD_LOGIC_VECTOR (3 downto 0) := (others => '0');
-    signal output   :STD_LOGIC                      := '0';
+    signal input    : STD_LOGIC_VECTOR (0 to 15)    := (others => 'U');
+    signal control  : STD_LOGIC_VECTOR (3 downto 0) := (others => 'U');
+    signal output   : STD_LOGIC                      := '0';
 begin
 
     uut : mux_16_1
-    port map (  b0  => input(0),
-                b1  => input(1),
-                b2  => input(2),
-                b3  => input(3),
-                b4  => input(4),
-                b5  => input(5),
-                b6  => input(6),
-                b7  => input(7),
-                b8  => input(8),
-                b9  => input(9),
-                b10 => input(10),
-                b11 => input(11),
-                b12 => input(12),
-                b13 => input(13),
-                b14 => input(14),
-                b15 => input(15),
-                s0  => control(0),
-                s1  => control(1),
-                s2  => control(2),
-                s3  => control(3),
+    port map (  b => input,
+                s => control,
                 y0   => output
             );
 
