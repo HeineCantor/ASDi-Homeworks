@@ -1,7 +1,0 @@
-v 4
-file . "elaborator_tb.vhd" "8a7bf784899095730dae2786766a652a6a8251ae" "20231017095643.522":
-  entity elaborator_tb at 1( 0) + 0 on 17;
-  architecture behavioral of elaborator_tb at 9( 128) + 0 on 18;
-file . "elaborator.vhd" "3353e7988cb39cc26d8d2057eac421d56c81ac8a" "20231017095637.443":
-  entity elaborator at 1( 0) + 0 on 15;
-  architecture dataflow of elaborator at 12( 243) + 0 on 16;
