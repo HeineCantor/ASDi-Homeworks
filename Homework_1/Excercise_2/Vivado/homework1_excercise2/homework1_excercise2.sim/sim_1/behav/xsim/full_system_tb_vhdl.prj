@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../elaborator.vhd" \
+"../../../../../../full_system.vhd" \
+"../../../../../../rom_16_8bit.vhd" \
+"../../../../../../full_system_tb.vhd" \
+
+# Do not sort compile order
+nosort

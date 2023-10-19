@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_2/full_system.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'full_system'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_2/rom_16_8bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'rom_16_8bit'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_2/full_system_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'full_system_tb'
