@@ -34,7 +34,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity control_unit is
     port
     (
-        SW : in std_logic_vector(0 to 15);
+        switch      : in std_logic_vector(0 to 13);
+        
+        CLK100MHZ   : in std_logic;
+        
+        LED16_R     : out std_logic;
+        LED16_B     : out std_logic;
+        
+        buttonL     : in std_logic;
+        buttonR     : in std_logic;
         
         l : out std_logic_vector(0 to 3)
     );
@@ -51,20 +59,49 @@ architecture dataflow of control_unit is
             outputIndex : in    std_logic_vector(0 to 1)
         );
     end component interconnection_network;
+    
+    component data_input
+        port
+        (
+            clock   : in std_logic;
+            
+            data8bit    : in std_logic_vector(0 to 7);          
+            outputData  : out std_logic_vector(0 to 15) := (others => '0');
+            
+            notifyLeft  : out std_logic;
+            notifyRight : out std_logic;
+            
+            buttonL     : in std_logic;
+            buttonR     : in std_logic
+        );
+    end component data_input;
 
-    signal mockData :    std_logic_vector(0 to 15)    := (others => 'U');
+    signal dataWire :      std_logic_vector(0 to 15)    := (others => '0');
 
 begin
+
+    dataInputEntity : data_input
+    port map
+    (
+        clock => CLK100MHZ,
+        
+        data8bit => switch(6 to 13),
+        outputData => dataWire,
+        
+        notifyLeft => LED16_R,
+        notifyRight => LED16_B,
+        
+        buttonL => buttonL,
+        buttonR => buttonR
+    );
 
     interconnectEntity : interconnection_network
     port map
     (
-        input => mockData,
+        input => dataWire,
         output => l,
-        inputIndex => sw(0 to 3),
-        outputIndex => sw(4 to 5)
-    );
-
-    mockData <= "0101010110101010"; 
+        inputIndex => switch(0 to 3),
+        outputIndex => switch(4 to 5)
+    ); 
 
 end dataflow;

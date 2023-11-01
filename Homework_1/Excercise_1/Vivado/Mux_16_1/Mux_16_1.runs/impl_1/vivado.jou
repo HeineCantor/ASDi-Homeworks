@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sun Oct 29 11:58:40 2023
-# Process ID: 43137
+# Start of session at: Wed Nov  1 16:51:21 2023
+# Process ID: 129954
 # Current directory: /home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/Vivado/Mux_16_1/Mux_16_1.runs/impl_1
 # Command line: vivado -log control_unit.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source control_unit.tcl -notrace
 # Log file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/Vivado/Mux_16_1/Mux_16_1.runs/impl_1/control_unit.vdi
 # Journal file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/Vivado/Mux_16_1/Mux_16_1.runs/impl_1/vivado.jou
-# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 3657.525 MHz, CPU Physical cores: 16, Host memory: 14528 MB
+# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 4632.938 MHz, CPU Physical cores: 16, Host memory: 14528 MB
 #-----------------------------------------------------------
 source control_unit.tcl -notrace

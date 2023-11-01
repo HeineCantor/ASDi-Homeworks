@@ -72,10 +72,6 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 4
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-32987-heinecantor-desktop/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -101,6 +97,7 @@ read_vhdl -library xil_defaultlib {
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/Vivado/Mux_16_1/Mux_16_1.srcs/sources_1/new/mux_4_1_tb.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/interconnection_network.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/interconnection_network_tb.vhd
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/data_input.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

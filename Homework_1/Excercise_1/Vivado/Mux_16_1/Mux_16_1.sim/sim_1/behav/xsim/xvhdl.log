@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/mux_16_1.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'mux_16_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Homework_1/Excercise_1/data_input.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'data_input'

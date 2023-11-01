@@ -1,10 +1,6 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
-"../../../../../../demux_1_4.vhd" \
-"../../../../../../interconnection_network.vhd" \
-"../../../../../../mux_16_1.vhd" \
-"../../../../../../mux_4_1.vhd" \
-"../../../../../../interconnection_network_tb.vhd" \
+"../../../../../../data_input.vhd" \
 
 # Do not sort compile order
 nosort
