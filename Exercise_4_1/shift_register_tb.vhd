@@ -37,12 +37,12 @@ begin
    
    
     uut : SR
-    GENERIC MAP (N => 4)
+    GENERIC MAP (N => 8)
     port map (CLOCK => clk_tb,
               RST => rst,
               MODE => mode,
               D  => input,
-              Q  => output(0 to 3));
+              Q  => output(0 to 7));
               
     stimuli : process
     begin
@@ -53,7 +53,9 @@ begin
        
         rst <='0';
         input <= '1';
-        wait for 100ns;
+        wait for 50ns;
+        mode <= "01";
+        wait for 50ns;
         input <= '0';
         wait for 100ns;
         input <= '1';
