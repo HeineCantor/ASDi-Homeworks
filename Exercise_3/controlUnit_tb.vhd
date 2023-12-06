@@ -76,7 +76,7 @@ port map(
         
         testInput <='1';
         testBtnInput <='1';
-        wait for 6 ms;
+        wait for 20 ms;
         
         
         testBtnInput <='0';

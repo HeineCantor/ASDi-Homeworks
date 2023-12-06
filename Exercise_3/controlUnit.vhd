@@ -14,7 +14,12 @@ entity controlUnit is
         btnMode : in std_logic;
         btnReset : in std_logic;
         
-        ledOutput : out std_logic
+        ledOutput : out std_logic;
+        ledTest : out std_logic;
+        
+        stateLed : out std_logic_vector (0 to 4);
+        LED16_B : out std_logic;
+        LED17_R : out std_logic
     );
 end controlUnit;
 
@@ -36,7 +41,8 @@ architecture Behavioral of controlUnit is
         A: in std_logic;
         RST: in std_logic;
         M: in std_logic;
-        y: out std_logic
+        y: out std_logic;
+        debugState: out std_logic_vector(0 to 4)
     );
     end component;
 
@@ -47,7 +53,8 @@ signal stepRiconoscitore : std_logic := '0';
 begin
     
 
-    debouncerInput: debouncer port map(
+    debouncerInput: debouncer
+     port map(
            clk => CLK100MHZ,
            button => btnInput,
            pressed=>pressedInput      
@@ -64,8 +71,16 @@ begin
         A=>pressedInput,
         RST=>btnReset,
         M=>switchMode,
-        y=>ledOutput
+        y=>ledOutput,
+        debugState => stateLed
     );    
+    
+    testLed : process(CLK100MHZ, switchInput, pressedInput, btnInput)
+    begin
+        ledTest <= switchInput;
+        LED16_B <= pressedInput;
+        LED17_R <= btnInput;
+    end process;
     
 --    stepUpdate : process(CLK100MHZ, pressedInput, pressedMode, stepRiconoscitore) 
 --        variable oldPressedInput : std_logic := 'U';

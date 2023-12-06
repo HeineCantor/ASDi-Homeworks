@@ -15,7 +15,7 @@ end debouncer;
 architecture Behavioral of debouncer is
 
 begin
-   clk_process : process(clk)
+   clk_process : process(clk, button)
    variable clkDiv: std_logic := '0';
    variable div: integer := 100;
    
