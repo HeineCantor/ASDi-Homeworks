@@ -1,0 +1,17 @@
+0.7
+2020.2
+Oct 13 2023
+20:21:30
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/AdderSubtractor.vhd,1707170049,vhdl,,,,addersubtractor,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/CounterMod4.vhd,1707562298,vhdl,,,,countermod4,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/DLatch.vhd,1707579550,vhdl,,,,drisingedge,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/FlipFlop.vhd,1707579282,vhdl,,,,registerff,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/FullAdder.vhd,1707167680,vhdl,,,,fulladder,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/Mux2to1.vhd,1707582242,vhdl,,,,mux3to1,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/NonRestoringDivider.vhd,1707583388,vhdl,,,,nonrestoringdivider,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/NonRestoringDivider_tb.vhd,1707585920,vhdl,,,,nonrestoringdivider_tb,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/RippleCarryAdder.vhd,1707171976,vhdl,,,,ripplecarryadder,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/UnitaControllo.vhd,1707585875,vhdl,,,,unitacontrollo,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/UnitaOperativa.vhd,1707584497,vhdl,,,,unitaoperativa,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/UnitaOperativa_tb.vhd,1707581174,vhdl,,,,unitaoperativa_tb,,,,,,,,
+/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/shift_register_16.vhd,1707577430,vhdl,,,,shiftregister8,,,,,,,,

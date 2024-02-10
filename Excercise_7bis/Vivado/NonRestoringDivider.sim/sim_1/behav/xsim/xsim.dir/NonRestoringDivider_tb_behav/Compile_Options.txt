@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "NonRestoringDivider_tb_behav" "xil_defaultlib.NonRestoringDivider_tb" -log "elaborate.log" 
