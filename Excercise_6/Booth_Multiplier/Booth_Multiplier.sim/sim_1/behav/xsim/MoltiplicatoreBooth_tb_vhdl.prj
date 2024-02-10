@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../AdderSubtractor.vhd" \
+"../../../../FullAdder.vhd" \
+"../../../../Mux2to1.vhd" \
+"../../../../RippleCarryAdder.vhd" \
+"../../../../register_8.vhd" \
+"../../../../shift_register_16.vhd" \
+"../../../../UnitaOperativa.vhd" \
+"../../../../counter_mod8.vhd" \
+"../../../../ShiftRegisterPadding.vhd" \
+"../../../../UnitaControllo.vhd" \
+"../../../../MoltiplicatoreBooth.vhd" \
+"../../../../MoltiplicatoreBooth_tb.vhd" \
+
+# Do not sort compile order
+nosort

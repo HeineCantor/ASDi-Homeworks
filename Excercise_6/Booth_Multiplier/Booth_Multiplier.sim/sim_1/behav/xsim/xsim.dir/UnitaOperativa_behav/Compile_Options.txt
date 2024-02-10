@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "UnitaOperativa_behav" "xil_defaultlib.UnitaOperativa" -log "elaborate.log" 
