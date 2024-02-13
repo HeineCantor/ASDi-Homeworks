@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Feb 13 10:38:50 2024
+# Process ID: 27354
+# Current directory: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_3/Vivado/RiconoscitoreSequenza/RiconoscitoreSequenza.runs/synth_1
+# Command line: vivado -log controlUnit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source controlUnit.tcl
+# Log file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_3/Vivado/RiconoscitoreSequenza/RiconoscitoreSequenza.runs/synth_1/controlUnit.vds
+# Journal file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_3/Vivado/RiconoscitoreSequenza/RiconoscitoreSequenza.runs/synth_1/vivado.jou
+# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 3687.508 MHz, CPU Physical cores: 16, Host memory: 14528 MB
+#-----------------------------------------------------------
+source controlUnit.tcl -notrace

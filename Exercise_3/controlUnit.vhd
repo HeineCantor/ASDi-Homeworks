@@ -25,25 +25,28 @@ end controlUnit;
 
 architecture Behavioral of controlUnit is
 
-    component debouncer is
-        generic(
-        activation_ms : integer :=5
-    );
-  Port (    clk: in std_logic;
-            button: in std_logic;
-            pressed: out std_logic     
-   );
+    component ButtonDebouncer is
+        generic (                       
+            CLK_period: integer := 10;  -- periodo del clock (della board) in nanosecondi
+            btn_noise_time: integer := 10000000 -- durata stimata dell'oscillazione del bottone in nanosecondi
+                                                -- il valore di default è 10 millisecondi
+        );
+        Port ( RST : in STD_LOGIC;
+               CLK : in STD_LOGIC;
+               BTN : in STD_LOGIC;
+               CLEARED_BTN : out STD_LOGIC);
     end component;
 
     component Riconoscitore_101 is
-    Port ( 
-        x: in std_logic;
-        A: in std_logic;
-        RST: in std_logic;
-        M: in std_logic;
-        y: out std_logic;
-        debugState: out std_logic_vector(0 to 4)
-    );
+        Port ( 
+            x: in std_logic;
+            A: in std_logic;
+            clock, reset: in std_logic;
+            M: in std_logic := '1';
+            y: out std_logic;
+            
+            debugState: out std_logic_vector(0 to 4)
+        );
     end component;
 
 signal pressedInput: std_logic := '0';
@@ -53,45 +56,20 @@ signal stepRiconoscitore : std_logic := '0';
 begin
     
 
-    debouncerInput: debouncer
-     port map(
-           clk => CLK100MHZ,
-           button => btnInput,
-           pressed=>pressedInput      
-        );
+    debouncerInput: ButtonDebouncer
+    port map(btnReset, CLK100MHZ, btnInput, pressedInput);
 
-    debouncerMode: debouncer port map(
-           clk => CLK100MHZ,
-           button => btnMode,
-           pressed=>pressedMode      
-        );
+    debouncerMode: ButtonDebouncer
+    port map(btnReset, CLK100MHZ, btnMode, pressedMode);
         
     riconoscitore: Riconoscitore_101 port map(
         x=>switchInput,
         A=>pressedInput,
-        RST=>btnReset,
+        clock => CLK100MHZ,
+        reset=>btnReset,
         M=>switchMode,
-        y=>ledOutput,
+        y=>LED16_B,
         debugState => stateLed
     );    
-    
-    testLed : process(CLK100MHZ, switchInput, pressedInput, btnInput)
-    begin
-        ledTest <= switchInput;
-        LED16_B <= pressedInput;
-        LED17_R <= btnInput;
-    end process;
-    
---    stepUpdate : process(CLK100MHZ, pressedInput, pressedMode, stepRiconoscitore) 
---        variable oldPressedInput : std_logic := 'U';
---        begin
---        if(oldPressedInput = '1' and pressedInput = '0') then
---            stepRiconoscitore <= '1';
---        else
---            stepRiconoscitore <= '0';
---        end if;
-        
---        oldPressedInput := pressedInput;
---    end process;
         
 end Behavioral;

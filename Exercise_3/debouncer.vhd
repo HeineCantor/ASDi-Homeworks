@@ -1,56 +1,91 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
-entity debouncer is
-    generic(
-        activation_ms : integer
+entity ButtonDebouncer is
+    generic (                       
+        CLK_period: integer := 10;  -- periodo del clock (della board) in nanosecondi
+        btn_noise_time: integer := 10000000 -- durata stimata dell'oscillazione del bottone in nanosecondi
+                                            -- il valore di default è 10 millisecondi
     );
-  Port (    clk: in std_logic;
-            button: in std_logic;
-            pressed: out std_logic     
-   );
-end debouncer;
+    Port ( RST : in STD_LOGIC;
+           CLK : in STD_LOGIC;
+           BTN : in STD_LOGIC;
+           CLEARED_BTN : out STD_LOGIC);
+end ButtonDebouncer;
 
-architecture Behavioral of debouncer is
+architecture Behavioral of ButtonDebouncer is
+
+type stato is (NOT_PRESSED, CHK_PRESSED, PRESSED, CHK_NOT_PRESSED);
+signal BTN_state : stato := NOT_PRESSED;
+
+constant max_count : integer := btn_noise_time/CLK_period; -- 10000000/10= conto 1000000 colpi di clock 
 
 begin
-   clk_process : process(clk, button)
-   variable clkDiv: std_logic := '0';
-   variable div: integer := 100;
-   
-   variable counter : integer := 0;
-   
-   variable btnCounter : integer := 0;
-   
-   variable maxCountForButton : integer := activation_ms * 1000; -- milliseconds for activation in ns
-   
-   begin
-    if(rising_edge(clk)) then
-        counter := counter + 1;
-    end if;
-    clkDiv := '0';
-    
-    if(counter = div+1) then
-        counter := 0;
-        clkDiv := '1';
-    end if;
-    
-    if(clkDiv = '1') then
-        if(button = '1') then
-            btnCounter := btnCounter + 1;   -- TODO: handle integer overflow (non tenere premuto il bottone :>)
-        else
-            btnCounter := 0;
-        end if;
-    
-        if (btnCounter > maxCountForButton) then
-            pressed <= '1';
-        else
-            pressed <= '0';
-        end if;
-    end if;
-    
-   end process;
+
+deb: process (CLK)
+variable count: integer := 0;
+
+begin
+   if rising_edge(CLK) then
+	   
+	   if( RST = '1') then
+	       BTN_state <= NOT_PRESSED;
+	       CLEARED_BTN <= '0';
+	   else
+	   	  case BTN_state is
+			when NOT_PRESSED =>
+			    if( BTN = '1' ) then
+					BTN_state <= CHK_PRESSED;
+				else 
+					BTN_state <= NOT_PRESSED;
+				end if;
+            when CHK_PRESSED =>
+                if(count = max_count -1) then
+                    if(BTN = '1') then --se arrivo a count max ed è ancora alto vuol dire che non era un bounce, devo alzare CREARED_BTN
+                        count:=0;
+                        CLEARED_BTN <= '1';
+                        BTN_state <= PRESSED;
+                    else
+                        count:=0;
+                        BTN_state <= NOT_PRESSED;
+                    end if;
+                        
+                else 
+                    count:= count+1;
+                    BTN_state <= CHK_PRESSED;
+                end if;
+                
+            when PRESSED =>
+                CLEARED_BTN<= '0'; --questo lo metto per fare in modo che il segnale sia alto per un solo impulso di clock
+			     
+			    if(BTN = '0') then
+				    BTN_state <= CHK_NOT_PRESSED;
+				else
+				    BTN_state <= PRESSED;
+				end if;
+			
+			when CHK_NOT_PRESSED =>
+			    if(count = max_count -1) then
+                    if(BTN = '0') then --se arrivo a count max ed è ancora basso vuol dire che non era un bounce e il botone è stato rilasciato
+                        count:=0;
+                        BTN_state <= NOT_PRESSED;
+                    else
+                        count:=0;
+                        BTN_state <= PRESSED;
+                    end if;
+                        
+                else 
+                    count:= count+1;
+                    BTN_state <= CHK_NOT_PRESSED;
+                end if;
+                
+            when others => 
+                BTN_state <= NOT_PRESSED;
+		  end case;
+    end if;  
+  end if;  
+end process;
 
 
 end Behavioral;
