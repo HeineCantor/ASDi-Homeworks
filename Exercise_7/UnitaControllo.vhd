@@ -17,7 +17,7 @@ end UnitaControllo;
 
 architecture structural of UnitaControllo is
 
-    type state is (idle, operandPreparation, goSomma, goShift, goCount, endState);
+    type state is (idle, operandPreparation, waitForOperands, goSomma, goShift, goCount, endState);
     signal currentState, nextState: state;
 
 begin
@@ -56,9 +56,12 @@ begin
                 loadM <= '1';
                 loadAQ <= '1';
                 
-                nextState <= goSomma;
+                nextState <= waitForOperands;
                 
-            WHEN goSomma =>                
+            WHEN waitForOperands =>
+                nextState <= goSomma;         
+                
+            WHEN goSomma =>
                 if (q0 = '1' and q_1 = '0') then
                     subSignal <= '1';
                 

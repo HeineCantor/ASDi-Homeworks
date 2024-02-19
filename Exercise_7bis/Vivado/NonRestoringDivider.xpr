@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="65" Path="/home/heinecantor/Desktop/git/ASDi-Homeworks/Excercise_7bis/Vivado/NonRestoringDivider.xpr">
+<Project Product="Vivado" Version="7" Minor="65" Path="/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/NonRestoringDivider.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="33fe2ba1d5af4ffab9f875c3e0ff38de"/>
