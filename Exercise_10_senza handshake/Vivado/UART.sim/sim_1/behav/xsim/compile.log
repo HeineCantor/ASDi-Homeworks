@@ -1,0 +1,22 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/A.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'A'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/B.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'B'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RAM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RAM'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/ROM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ROM'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Rs232RefComp'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'UART_SYSTEM'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/control_unit_A.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'control_unit_A'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/control_unit_B.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'control_unit_B'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/counter_generic.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/register_B.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register_B'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_UART_SYSTEM'

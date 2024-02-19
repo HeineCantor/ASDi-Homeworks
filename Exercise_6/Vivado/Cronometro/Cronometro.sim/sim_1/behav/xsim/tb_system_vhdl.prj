@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../M.vhd" \
+"../../../../../../control_unit.vhd" \
+"../../../../../../counter_mod8.vhd" \
+"../../../../../../mem.vhd" \
+"../../../../../../rom.vhd" \
+"../../../../../../system.vhd" \
+"../../../../../../system_tb.vhd" \
+
+# Do not sort compile order
+nosort

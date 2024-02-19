@@ -1,0 +1,16 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../A.vhd" \
+"../../../../../B.vhd" \
+"../../../../../RAM.vhd" \
+"../../../../../ROM.vhd" \
+"../../../../../RS232RefComp.vhd" \
+"../../../../../UART_SYSTEM.vhd" \
+"../../../../../control_unit_A.vhd" \
+"../../../../../control_unit_B.vhd" \
+"../../../../../counter_generic.vhd" \
+"../../../../../register_B.vhd" \
+"../../../../../UART_SYSTEM_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -8,6 +8,7 @@ architecture tb of tb_system is
 
     component system
         port (START  : in std_logic;
+              enableRead: in std_logic;
               CLK    : in std_logic;
               RST    : in std_logic;
               STOP   : out std_logic;
@@ -18,6 +19,8 @@ architecture tb of tb_system is
     signal RST    : std_logic;
     signal STOP   : std_logic;
     signal OUTPUT : std_logic_vector (3 downto 0) :="0000";
+    
+    signal enableRead: std_logic;
     
     signal clk_tb : std_logic;
     constant clk_period : time := 20 ns;
@@ -36,6 +39,7 @@ begin
     
     dut : system
     port map (START  => START,
+              enableRead => enableRead,
               CLK    => clk_tb,
               RST    => RST,
               STOP   => STOP,
@@ -50,12 +54,18 @@ begin
         
         
         START <= '1';
+        wait for 21ns;
+        start <= '0';
+        enableRead <= '1';
         wait for 700 ns;
         
         RST <= '1';
+        start <= '1';
         wait for 50 ns;
-        
         RST <= '0';
+        wait for 50ns;
+        start <= '0';
+        
 
         
         

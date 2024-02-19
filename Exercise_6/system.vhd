@@ -5,6 +5,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity system is
   Port ( 
   START: in STD_LOGIC;
+  enableRead: in STD_LOGIC;
   CLK: in STD_LOGIC;
   RST: in STD_LOGIC;
   STOP: out STD_LOGIC;
@@ -17,6 +18,7 @@ architecture Structural of system is
 component control_unit is
     port(
         start: in STD_LOGIC;
+        enableRead: in STD_LOGIC;
         clk: in STD_LOGIC;
         reset: in STD_LOGIC;
         read: out STD_LOGIC;
@@ -90,6 +92,7 @@ CU_reset <= RST;
 CU: control_unit
 port map(
     start => START,
+    enableRead => enableRead,
     clk => CLK,
     reset => CU_reset,
     read => CU_read_ROM,
