@@ -18,6 +18,7 @@ architecture struct of SR is
     component FF_D is
     port(
         d, clk: in std_logic;
+        rst: in std_logic;
         q: out std_logic
     );
     end component;
@@ -25,7 +26,7 @@ architecture struct of SR is
     
     component mux_4_1 is
     port(   a : in STD_LOGIC_VECTOR(0 to 3);
-            z : in  STD_LOGIC_VECTOR(0 to 1);
+            s : in  STD_LOGIC_VECTOR(0 to 1);
             y  : out STD_LOGIC
     );
     end component;
@@ -38,6 +39,7 @@ begin
         FF_D_0: FF_D port map(
         d => mux_out(i),
         clk => clock,
+        rst => rst,
         q => f_out(i)
         );
     end generate;
@@ -47,9 +49,9 @@ begin
         MUX_0: mux_4_1 port map(
             a(0)=> D,
             a(1)=> f_out(1),
-            a(2)=> '0',
+            a(2)=> D,
             a(3)=> f_out(2),
-            z=> MODE,
+            s=> MODE,
             y=> mux_out(0)
         );
     end generate IF_CLAUSE;
@@ -60,7 +62,7 @@ begin
             a(1)=> f_out(2),
             a(2)=> D,
             a(3)=> f_out(3),
-            z=> MODE,
+            s=> MODE,
             y=> mux_out(1)
         );
     end generate ELSE_CLAUSE_1;
@@ -72,7 +74,7 @@ begin
             a(1)=> f_out(i+1),
             a(2)=> f_out(i-2),
             a(3)=> f_out(i+2),
-            z=> MODE,
+            s=> MODE,
             y=> mux_out(i)
         );
         end generate MUX_GENERAL;
@@ -84,7 +86,7 @@ begin
             a(1)=> f_out(N-1),
             a(2)=> f_out(N-4),
             a(3)=> D,
-            z=> MODE,
+            s=> MODE,
             y=> mux_out(N-2)
         );
     end generate ELSE_CLAUSE_2;
@@ -94,12 +96,11 @@ begin
             a(0)=> f_out(N-2),
             a(1)=> D,
             a(2)=> f_out(N-3),
-            a(3)=> '0',
-            z=> MODE,
+            a(3)=> D,
+            s=> MODE,
             y=> mux_out(N-1)
         );
     end generate ELSE_CLAUSE_3;
-    
     
     
     end generate;
@@ -107,9 +108,3 @@ begin
     Q <= f_out(0 to N-1);
 
 end struct;
-
-
-
-
-
-
