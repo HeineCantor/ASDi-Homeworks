@@ -26,21 +26,22 @@ generic( DIM: integer :=6 );
 		   enable : in STD_LOGIC;
 		   set: in STD_LOGIC;
 		   load: in STD_LOGIC_VECTOR ((DIM-1) downto 0);
-           counter : out  STD_LOGIC_VECTOR ((DIM-1) downto 0));
+           counter : out  STD_LOGIC_VECTOR ((DIM-1) downto 0);
+           overflow: out std_logic
+         );
 end component;
 
 signal S1: std_logic_vector(0 to 5);
 signal S2: std_logic_vector(0 to 5);
 signal S3: std_logic_vector(0 to 5);
 
-signal Q1: std_logic;
-signal Q2: std_logic;
+signal Q1, Q2, Q3: std_logic;
 signal reset: std_logic;
 
 begin
 
-Q1 <= C and (S1(0) and S1(1) and S1(2) and (S1(3)) and not(S1(4)) and not(S1(5)));
-Q2 <= C and (S1(0) and S1(1) and S1(2) and (S1(3)) and not(S1(4)) and not(S1(5))) and (S2(0) and S2(1) and S2(2) and not(S2(3)) and (S2(4)) and (S2(5)));
+--Q1 <= EN and (S1(0) and S1(1) and S1(2) and not (S1(3)) and (S1(4)) and (S1(5)));
+--Q2 <= Q1 and (S2(0) and S2(1) and S2(2) and not(S2(3)) and (S2(4)) and (S2(5)));
 
     count_mod64_1: counter
     port map(
@@ -49,7 +50,8 @@ Q2 <= C and (S1(0) and S1(1) and S1(2) and (S1(3)) and not(S1(4)) and not(S1(5))
 	enable => EN,
 	set => SET,
 	load => LOAD_SEC,
-    counter => S1
+    counter => S1,
+    overflow => Q1
     );
     
     count_mod64_2: counter
@@ -59,7 +61,8 @@ Q2 <= C and (S1(0) and S1(1) and S1(2) and (S1(3)) and not(S1(4)) and not(S1(5))
 	enable => EN,
 	set => SET,
 	load => LOAD_MIN,
-    counter => S2
+    counter => S2,
+    overflow => Q2
     );
     
     count_mod64_3: counter
@@ -69,7 +72,8 @@ Q2 <= C and (S1(0) and S1(1) and S1(2) and (S1(3)) and not(S1(4)) and not(S1(5))
 	enable => EN,
     set => SET,
 	load => LOAD_HOUR,
-    counter => S3
+    counter => S3,
+    overflow => Q3
     );
 
 HOUR <= S3;

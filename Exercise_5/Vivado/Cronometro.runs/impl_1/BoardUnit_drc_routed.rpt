@@ -1,0 +1,155 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue Feb 20 18:37:29 2024
+| Host         : heinecantor-desktop running 64-bit Ubuntu 22.04.3 LTS
+| Command      : report_drc -file BoardUnit_drc_routed.rpt -pb BoardUnit_drc_routed.pb -rpx BoardUnit_drc_routed.rpx
+| Design       : BoardUnit
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 22
++----------+----------+-----------------------------------------------------+------------+
+| Rule     | Severity | Description                                         | Violations |
++----------+----------+-----------------------------------------------------+------------+
+| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
+| PDRC-153 | Warning  | Gated clock check                                   | 21         |
++----------+----------+-----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CFGBVS-1#1 Warning
+Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
+Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_18 is a gated clock net sourced by a combinational pin controlUnit/c_reg[0]_LDC_i_1/O, cell controlUnit/c_reg[0]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_19 is a gated clock net sourced by a combinational pin controlUnit/c_reg[1]_LDC_i_1/O, cell controlUnit/c_reg[1]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_20 is a gated clock net sourced by a combinational pin controlUnit/c_reg[2]_LDC_i_1/O, cell controlUnit/c_reg[2]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_21 is a gated clock net sourced by a combinational pin controlUnit/c_reg[3]_LDC_i_1/O, cell controlUnit/c_reg[3]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_22 is a gated clock net sourced by a combinational pin controlUnit/c_reg[4]_LDC_i_1/O, cell controlUnit/c_reg[4]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_23 is a gated clock net sourced by a combinational pin controlUnit/c_reg[5]_LDC_i_1/O, cell controlUnit/c_reg[5]_LDC_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_24 is a gated clock net sourced by a combinational pin controlUnit/c_reg[0]_LDC_i_1__0/O, cell controlUnit/c_reg[0]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_25 is a gated clock net sourced by a combinational pin controlUnit/c_reg[1]_LDC_i_1__0/O, cell controlUnit/c_reg[1]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_26 is a gated clock net sourced by a combinational pin controlUnit/c_reg[2]_LDC_i_1__0/O, cell controlUnit/c_reg[2]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_27 is a gated clock net sourced by a combinational pin controlUnit/c_reg[3]_LDC_i_1__0/O, cell controlUnit/c_reg[3]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_28 is a gated clock net sourced by a combinational pin controlUnit/c_reg[4]_LDC_i_1__0/O, cell controlUnit/c_reg[4]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_29 is a gated clock net sourced by a combinational pin controlUnit/c_reg[5]_LDC_i_1__0/O, cell controlUnit/c_reg[5]_LDC_i_1__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#13 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_30 is a gated clock net sourced by a combinational pin controlUnit/c_reg[0]_LDC_i_1__1/O, cell controlUnit/c_reg[0]_LDC_i_1__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#14 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_31 is a gated clock net sourced by a combinational pin controlUnit/c_reg[1]_LDC_i_1__1/O, cell controlUnit/c_reg[1]_LDC_i_1__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#15 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_32 is a gated clock net sourced by a combinational pin controlUnit/c_reg[2]_LDC_i_1__1/O, cell controlUnit/c_reg[2]_LDC_i_1__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#16 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_33 is a gated clock net sourced by a combinational pin controlUnit/c_reg[3]_LDC_i_1__1/O, cell controlUnit/c_reg[3]_LDC_i_1__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#17 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_34 is a gated clock net sourced by a combinational pin controlUnit/c_reg[4]_LDC_i_1__1/O, cell controlUnit/c_reg[4]_LDC_i_1__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#18 Warning
+Gated clock check  
+Net controlUnit/FSM_onehot_currentState_reg[5]_35 is a gated clock net sourced by a combinational pin controlUnit/c_reg[5]_LDC_i_1__1/O, cell controlUnit/c_reg[5]_LDC_i_1__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#19 Warning
+Gated clock check  
+Net controlUnit/selHourLink is a gated clock net sourced by a combinational pin controlUnit/selHourLink_reg[5]_i_1/O, cell controlUnit/selHourLink_reg[5]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#20 Warning
+Gated clock check  
+Net controlUnit/selMinLink is a gated clock net sourced by a combinational pin controlUnit/selMinLink_reg[5]_i_1/O, cell controlUnit/selMinLink_reg[5]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#21 Warning
+Gated clock check  
+Net controlUnit/selSecLink is a gated clock net sourced by a combinational pin controlUnit/selSecLink_reg[5]_i_1/O, cell controlUnit/selSecLink_reg[5]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+

@@ -69,27 +69,15 @@ begin
         wait for 20 ns;
         
         rst<='0';
-        wait for 1000000 ns;
+        wait for 100 ns;
         
         rst <='1';
         en <= '0';
-        wait for  10000 ns;
+        wait for  100 ns;
           
         rst<='0';
         en <= '1';
-        wait for 10000 ns;
-        
-        load_hour <="101101";
-        load_min <="010111";
-        load_sec <="001001";
-        wait for 12000 ns;
-        
-        set<='1';
-        wait for 10000 ns;
-        
-        set<='0';
-        wait for 10000 ns;
-
+        wait for 100 ns;
         
         wait;
     end process;

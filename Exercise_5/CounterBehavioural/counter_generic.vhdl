@@ -13,32 +13,40 @@ generic( DIM: integer :=6 );
 		   enable : in STD_LOGIC;
 		   set: in STD_LOGIC;
 		   load: in STD_LOGIC_VECTOR ((DIM-1) downto 0);
-           counter : out  STD_LOGIC_VECTOR ((DIM-1) downto 0)
+           counter : out  STD_LOGIC_VECTOR ((DIM-1) downto 0);
+           overflow: out std_logic
            ); 
 end counter;
 
 architecture Behavioral of counter is
 
 signal c : std_logic_vector ((DIM-1) downto 0) := (others => '0');
+signal counted: std_logic := '0';
 
 begin
-counter <= c;
 
-counter_process: process(clock, reset, set, c)
+
+counter_process: process(clock, reset, set)
 begin
-    
      if reset = '1' then
 		  c <= (others => '0');
-	 elsif c="111100" then
-        c<=(others => '0');
      elsif set='1' then
 	       c<=load;
-     elsif(clock'event AND clock='1') then
+     elsif(rising_edge(clock)) then
+        counted <= '0';
+     
 	   if enable = '1' then
-		  c <= std_logic_vector(unsigned(c) + 1);
+	      if (c = "111011") then
+	           c <= (others => '0');
+	           counted <= '1';
+	      else
+		      c <= std_logic_vector(unsigned(c) + 1);
+		  end if;
 	   end if;
 	 end if;
-
 end process;
+
+counter <= c;
+overflow <= counted;
 
 end Behavioral;

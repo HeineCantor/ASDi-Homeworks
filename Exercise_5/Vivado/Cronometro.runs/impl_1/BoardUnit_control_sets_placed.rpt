@@ -1,0 +1,140 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Tue Feb 20 18:37:14 2024
+| Host         : heinecantor-desktop running 64-bit Ubuntu 22.04.3 LTS
+| Command      : report_control_sets -verbose -file BoardUnit_control_sets_placed.rpt
+| Design       : BoardUnit
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    62 |
+|    Minimum number of control sets                        |    62 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   410 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    62 |
+| >= 0 to < 4        |    57 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              20 |            8 |
+| No           | No                    | Yes                    |              18 |           18 |
+| No           | Yes                   | No                     |              78 |           35 |
+| Yes          | No                    | No                     |               1 |            1 |
+| Yes          | No                    | Yes                    |              18 |           18 |
+| Yes          | Yes                   | No                     |              31 |            8 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------------------+------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+|                  Clock Signal                  |               Enable Signal              |                Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------------------------+------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+|  orologio/count_mod64_1/counted                |                                          |                                               |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_26 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_8  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_35 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_17 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          |                                          | controlUnit/FSM_onehot_currentState_reg[5]_1  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          |                                          | controlUnit/FSM_onehot_currentState_reg[5]_2  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          |                                          | controlUnit/FSM_onehot_currentState_reg[5]_4  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          |                                          | controlUnit/FSM_onehot_currentState_reg[5]_0  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          |                                          | controlUnit/FSM_onehot_currentState_reg[5]_3  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          |                                          | controlUnit/FSM_onehot_currentState_reg[5]_5  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_18 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_19 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_20 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_22 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_23 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_2/counted_reg_0          | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_21 |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_21 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_3  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                |                                          | controlUnit/FSM_onehot_currentState_reg[5]_10 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                |                                          | controlUnit/FSM_onehot_currentState_reg[5]_6  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                |                                          | controlUnit/FSM_onehot_currentState_reg[5]_8  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                |                                          | controlUnit/FSM_onehot_currentState_reg[5]_11 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                |                                          | controlUnit/FSM_onehot_currentState_reg[5]_7  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                |                                          | controlUnit/FSM_onehot_currentState_reg[5]_9  |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_25 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_27 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_28 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_29 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_26 |                1 |              1 |         1.00 |
+|  orologio/count_mod64_1/counted                | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_24 |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_24 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_6  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_33 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_15 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 |                                          |                                               |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_18 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_0  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_19 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_1  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_20 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_2  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_22 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_4  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_23 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_5  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_25 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_7  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_34 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_16 |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_27 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_9  |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_28 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_10 |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_29 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_11 |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_30 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_12 |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_31 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_13 |                1 |              1 |         1.00 |
+|  controlUnit/FSM_onehot_currentState_reg[5]_32 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_14 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_12 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_13 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_15 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_16 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_14 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 |                                          | controlUnit/FSM_onehot_currentState_reg[5]_17 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_34 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_30 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_31 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_32 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_35 |                1 |              1 |         1.00 |
+|  singleHzDivider/clockfx_reg_0                 | controlUnit/enableClock                  | controlUnit/FSM_onehot_currentState_reg[5]_33 |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG                               | setButtonDebouncer/deb.count[31]_i_2_n_0 |                                               |                1 |              1 |         1.00 |
+|  controlUnit/selMinLink                        |                                          |                                               |                2 |              6 |         3.00 |
+|  controlUnit/selSecLink                        |                                          |                                               |                2 |              6 |         3.00 |
+|  controlUnit/selHourLink                       |                                          |                                               |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG                               | setButtonDebouncer/deb.count[31]_i_2_n_0 | setButtonDebouncer/deb.count[31]_i_1_n_0      |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG                               |                                          | btnReset_IBUF                                 |               17 |             60 |         3.53 |
++------------------------------------------------+------------------------------------------+-----------------------------------------------+------------------+----------------+--------------+
+
+
