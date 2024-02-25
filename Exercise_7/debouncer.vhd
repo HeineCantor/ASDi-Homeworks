@@ -4,9 +4,9 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ButtonDebouncer is
     generic (                       
-        CLK_period: integer := 10;  -- periodo del clock (della board) in nanosecondi
-        btn_noise_time: integer := 10000000 -- durata stimata dell'oscillazione del bottone in nanosecondi
-                                            -- il valore di default è 10 millisecondi
+        CLK_period: integer := 10;  
+        btn_noise_time: integer := 10000000 
+                                            
     );
     Port ( RST : in STD_LOGIC;
            CLK : in STD_LOGIC;
@@ -19,7 +19,7 @@ architecture Behavioral of ButtonDebouncer is
 type stato is (NOT_PRESSED, CHK_PRESSED, PRESSED, CHK_NOT_PRESSED);
 signal BTN_state : stato := NOT_PRESSED;
 
-constant max_count : integer := btn_noise_time/CLK_period; -- 10000000/10= conto 1000000 colpi di clock 
+constant max_count : integer := btn_noise_time/CLK_period; 
 
 begin
 
@@ -42,7 +42,7 @@ begin
 				end if;
             when CHK_PRESSED =>
                 if(count = max_count -1) then
-                    if(BTN = '1') then --se arrivo a count max ed è ancora alto vuol dire che non era un bounce, devo alzare CREARED_BTN
+                    if(BTN = '1') then 
                         count:=0;
                         CLEARED_BTN <= '1';
                         BTN_state <= PRESSED;
@@ -57,7 +57,7 @@ begin
                 end if;
                 
             when PRESSED =>
-                CLEARED_BTN<= '0'; --questo lo metto per fare in modo che il segnale sia alto per un solo impulso di clock
+                CLEARED_BTN<= '0';
 			     
 			    if(BTN = '0') then
 				    BTN_state <= CHK_NOT_PRESSED;
@@ -67,7 +67,7 @@ begin
 			
 			when CHK_NOT_PRESSED =>
 			    if(count = max_count -1) then
-                    if(BTN = '0') then --se arrivo a count max ed è ancora basso vuol dire che non era un bounce e il botone è stato rilasciato
+                    if(BTN = '0') then 
                         count:=0;
                         BTN_state <= NOT_PRESSED;
                     else

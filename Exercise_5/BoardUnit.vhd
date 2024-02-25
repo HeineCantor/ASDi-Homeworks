@@ -5,8 +5,9 @@ entity BoardUnit is
     port(
         clock: in std_logic;
         btnSet, btnCancel, btnReset, btnUp, btnDown: in std_logic;
-        switch: in std_logic_vector(15 downto 0);
+        switch: in std_logic_vector(5 downto 0);
         
+        ledMem: out std_logic_vector(15 downto 0);
         anodes, cathodes: out std_logic_vector(7 downto 0)
     );
 end BoardUnit;
@@ -20,17 +21,16 @@ architecture structural of BoardUnit is
         Port ( CLK : in  STD_LOGIC;
                RST : in  STD_LOGIC;
                VALUE : in  STD_LOGIC_VECTOR (31 downto 0);
-               ENABLE : in  STD_LOGIC_VECTOR (7 downto 0); -- decide quali cifre abilitare
-               DOTS : in  STD_LOGIC_VECTOR (7 downto 0); -- decide quali punti visualizzare
+               ENABLE : in  STD_LOGIC_VECTOR (7 downto 0);
+               DOTS : in  STD_LOGIC_VECTOR (7 downto 0);
                ANODES : out  STD_LOGIC_VECTOR (7 downto 0);
                CATHODES : out  STD_LOGIC_VECTOR (7 downto 0));
     end component;
     
     component ButtonDebouncer is
         generic (                       
-            CLK_period: integer := 10;  -- periodo del clock (della board) in nanosecondi
-            btn_noise_time: integer := 10000000 -- durata stimata dell'oscillazione del bottone in nanosecondi
-                                                -- il valore di default è 10 millisecondi
+            CLK_period: integer := 10;
+            btn_noise_time: integer := 10000000
         );
         Port ( RST : in STD_LOGIC;
                CLK : in STD_LOGIC;
@@ -55,17 +55,17 @@ architecture structural of BoardUnit is
     
     component clock_filter is
         generic(
-            CLKIN_freq : integer := 100000000; --clock board 100MHz
-            CLKOUT_freq : integer := 500       --frequenza desiderata 500Hz
+            CLKIN_freq : integer := 100000000;
+            CLKOUT_freq : integer := 500
                 );
         Port ( 
            clock_in : in  STD_LOGIC;
            reset : in STD_LOGIC;
-           clock_out : out  STD_LOGIC -- attenzione: non � un vero clock ma un impulso che sar� usato come enable
+           clock_out : out  STD_LOGIC
         ); 
     end component;
     
-    component EncoderBCD is
+    component EncoderDecimalBCD is
         port(
             input: in std_logic_vector(0 to 5);
             
@@ -73,19 +73,65 @@ architecture structural of BoardUnit is
         );
     end component;
     
+    component EncoderOneHotBCD is
+        port(
+            input: in std_logic_vector(3 downto 0);
+            
+            output: out std_logic_vector(15 downto 0)
+        );
+    end component;
+    
     component BoardControlUnit is
         port(
             clock, reset: in std_logic;
             setSignal: in std_logic;
+            intertimeSignal: in std_logic;
             cancelSignal:   in std_logic;
-            switchInput: in std_logic_vector(15 downto 0);
-            secInput, minInput, hourInput: in std_logic_vector(7 downto 0);
+            switchInput: in std_logic_vector(5 downto 0);
             
             enableClock: out std_logic;
             loadSignal: out std_logic;
             selSec, selMin, selHour: out std_logic_vector(5 downto 0);
-            displayEnable: out std_logic_vector(7 downto 0);
-            valueToPrint:  out std_logic_vector(31 downto 0)
+            selDisplayOutput:  out std_logic_vector(1 downto 0);
+            memoryWrite, memoryRead: out std_logic
+        );
+    end component;
+    
+    component mem is
+        generic(
+            address_length: natural := 3;
+            data_length: natural := 4
+        );
+        port(
+            clock: in std_logic;
+            read: in std_logic;
+            write: in std_logic;
+            address: in std_logic_vector(address_length - 1 downto 0);
+            data_input: in std_logic_vector (data_length - 1 downto 0);
+            data_output: out std_logic_vector (data_length - 1 downto 0) := "0000"
+        );
+    end component;
+    
+    component UpDownCounter is
+        generic( 
+            dim: integer :=6
+        );
+        Port ( 
+           clock : in  STD_LOGIC;
+           reset : in  STD_LOGIC;
+           enableUp, enableDown : in STD_LOGIC;
+           counter : out  STD_LOGIC_VECTOR (dim-1 downto 0)
+        ); 
+    end component;
+    
+    component Mux3to1 is
+        generic (
+            width : integer range 1 to 32 := 24
+        );
+        port( 
+           a, b, c: in std_logic_vector(width-1 downto 0); 
+           sel: in std_logic_vector(1 downto 0);
+           o: out std_logic_vector(width-1 downto 0)
         );
     end component;
     
@@ -94,11 +140,22 @@ architecture structural of BoardUnit is
     signal hourValue, minValue, secValue: std_logic_vector (0 to 5) := (others => '0');
     signal decimalSeconds, decimalMinutes, decimalHours: std_logic_vector(7 downto 0) := (others => '0');
     
+    signal intertimeVisualizationSignal: std_logic;
+    
     signal enableClock: std_logic := '1';
     signal enableDisplaySignal: std_logic_vector(7 downto 0);
     
     signal singleHzClock: std_logic;
     signal valueToPrint: std_logic_vector(31 downto 0);
+    
+    signal memRead, memWrite: std_logic := '0';
+    signal memAddressSignal: std_logic_vector(3 downto 0) := (others => '0');
+    signal memBusIn, memBusOut: std_logic_vector(31 downto 0) := (others => '0');
+    
+    signal oneHotSelectedAddress: std_logic_vector(15 downto 0) := (others => '0');
+    
+    signal clockDisplay, setTimeDisplay, viewIntertimeDisplay: std_logic_vector(31 downto 0);
+    signal displayMuxSelector: std_logic_vector(1 downto 0);
 begin
 
     setButtonDebouncer: ButtonDebouncer
@@ -121,25 +178,33 @@ begin
     port map(
         rst => reset,
         clk => clock,
-        btn => btnUp,
+        btn => btnDown,
         cleared_btn => downSignal
     );
+    
+    cancelButtonDebouncer: ButtonDebouncer
+    port map(
+        rst => reset,
+        clk => clock,
+        btn => btnCancel,
+        cleared_btn => cancelSignal
+    );
 
-    bcdEncoderSeconds: EncoderBCD
+    bcdEncoderSeconds: EncoderDecimalBCD
     port map(
         input => secValue,
         
         output => decimalSeconds
     );
     
-    bcdEncoderMinutes: EncoderBCD
+    bcdEncoderMinutes: EncoderDecimalBCD
     port map(
         input => minValue,
         
         output => decimalMinutes
     );
     
-    bcdEncoderHours: EncoderBCD
+    bcdEncoderHours: EncoderDecimalBCD
     port map(
         input => hourValue,
         
@@ -155,6 +220,22 @@ begin
         clock_in => clock,
         reset => btnReset,
         clock_out => singleHzClock
+    );
+
+    clockDisplay <= "00000000" & decimalHours & decimalMinutes & decimalSeconds;
+    setTimeDisplay <= "0000000000" & setHour & "00" & setMinute & "00" & setSeconds;
+    viewIntertimeDisplay <= memBusOut;
+
+    displayMux: Mux3to1
+    generic map(
+        width => 32
+    )
+    port map(
+        a => clockDisplay,
+        b => setTimeDisplay,
+        c => viewIntertimeDisplay,
+        sel => displayMuxSelector,
+        o => valueToPrint
     );
 
     display: display_seven_segments
@@ -182,25 +263,61 @@ begin
         sec => secValue
     );
     
+    intertimeVisualizationSignal <= upSignal or downSignal;
+    
     controlUnit: BoardControlUnit
     port map(
         clock => clock, 
         reset => reset,
         setSignal => setSignal,
-        cancelSignal => '0',
+        intertimeSignal => intertimeVisualizationSignal,
+        cancelSignal => cancelSignal,
         switchInput => switch,
-        secInput => decimalSeconds,
-        minInput => decimalMinutes,
-        hourInput => decimalHours,
         enableClock => enableClock,
         selSec => setSeconds,
         selMin => setMinute,
         selHour => setHour,
         loadSignal => loadSignal,
-        displayEnable => enableDisplaySignal,
-        valueToPrint => valueToPrint
+        selDisplayOutput => displayMuxSelector,
+        memoryWrite => memWrite,
+        memoryRead => memRead
     );
     
+    memAddressCounter: UpDownCounter
+    generic map(
+        dim => 4
+    )
+    port map(
+        clock => clock,
+        reset => reset,
+        enableUp => upSignal,
+        enableDown => downSignal,
+        counter => memAddressSignal
+    );
+    
+    selectedAddress: EncoderOneHotBCD
+    port map(
+        input => memAddressSignal,
+        
+        output => oneHotSelectedAddress
+    );
+    
+    memoriaIntertempi: mem
+    generic map(
+        address_length => 4,
+        data_length => 32
+    )
+    port map(
+        clock => clock,
+        read => memRead,
+        write => memWrite,
+        address => memAddressSignal,
+        data_input => memBusIn,
+        data_output => memBusOut
+    );
+    
+    memBusIn <= clockDisplay;
     reset <= btnReset;
+    ledMem <= oneHotSelectedAddress;
 
 end structural;

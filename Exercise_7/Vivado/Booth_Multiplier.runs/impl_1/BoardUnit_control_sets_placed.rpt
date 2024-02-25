@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date         : Mon Feb 19 15:33:43 2024
+| Date         : Sat Feb 24 13:04:53 2024
 | Host         : heinecantor-desktop running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_control_sets -verbose -file BoardUnit_control_sets_placed.rpt
 | Design       : BoardUnit
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     6 |
-|    Minimum number of control sets                        |     6 |
+| Total control sets                                       |     5 |
+|    Minimum number of control sets                        |     5 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    16 |
+| Unused register locations in slices containing registers |     8 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,14 +39,14 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     6 |
+| Total control sets |     5 |
 | >= 0 to < 4        |     1 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     1 |
+| >= 14 to < 16      |     0 |
 | >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
@@ -58,27 +58,26 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              28 |           10 |
+| No           | No                    | No                     |               2 |            2 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              38 |           11 |
+| No           | Yes                   | No                     |              40 |           11 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              54 |           17 |
+| Yes          | Yes                   | No                     |              62 |           22 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------+-----------------------------------------+-----------------------------------------+------------------+----------------+--------------+
-|       Clock Signal      |              Enable Signal              |             Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------------+-----------------------------------------+-----------------------------------------+------------------+----------------+--------------+
-|  clock_IBUF_BUFG        |                                         |                                         |                2 |              2 |         1.00 |
-|  clock_IBUF_BUFG        | boothMultiplier/controlUnit/Q[0]        | btnReset_IBUF                           |                2 |              8 |         4.00 |
-|  clock_IBUF_BUFG        | boothMultiplier/controlUnit/p_1_in[0]   | btnReset_IBUF                           |                7 |             15 |         2.14 |
-|  multiplyDebouncer/E[0] |                                         |                                         |                8 |             26 |         3.25 |
-|  clock_IBUF_BUFG        | multiplyDebouncer/deb.count[31]_i_2_n_0 | multiplyDebouncer/deb.count[31]_i_1_n_0 |                8 |             31 |         3.88 |
-|  clock_IBUF_BUFG        |                                         | btnReset_IBUF                           |               11 |             38 |         3.45 |
-+-------------------------+-----------------------------------------+-----------------------------------------+------------------+----------------+--------------+
++------------------+-----------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+|   Clock Signal   |              Enable Signal              |             Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+-----------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG |                                         |                                         |                2 |              2 |         1.00 |
+|  clock_IBUF_BUFG | boothMultiplier/controlUnit/Q[1]        | btnReset_IBUF                           |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | boothMultiplier/controlUnit/p_1_in[0]   | btnReset_IBUF                           |               11 |             23 |         2.09 |
+|  clock_IBUF_BUFG | multiplyDebouncer/deb.count[31]_i_2_n_0 | multiplyDebouncer/deb.count[31]_i_1_n_0 |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG |                                         | btnReset_IBUF                           |               11 |             40 |         3.64 |
++------------------+-----------------------------------------+-----------------------------------------+------------------+----------------+--------------+
 
 

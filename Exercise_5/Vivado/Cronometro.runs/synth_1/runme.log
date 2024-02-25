@@ -23,140 +23,139 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 436895
+INFO: [Synth 8-7075] Helper process launched with PID 369871
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2040.688 ; gain = 405.715 ; free physical = 1584 ; free virtual = 7121
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2041.199 ; gain = 404.715 ; free physical = 191 ; free virtual = 3368
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'BoardUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:14]
-INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:5' bound to instance 'setButtonDebouncer' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'BoardUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:15]
+INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:5' bound to instance 'setButtonDebouncer' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:161]
 INFO: [Synth 8-638] synthesizing module 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:17]
 	Parameter CLK_period bound to: 10 - type: integer 
 	Parameter btn_noise_time bound to: 10000000 - type: integer 
 INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:36]
 INFO: [Synth 8-256] done synthesizing module 'ButtonDebouncer' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:17]
-INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:5' bound to instance 'upButtonDebouncer' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:112]
-INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:5' bound to instance 'downButtonDebouncer' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:120]
-INFO: [Synth 8-3491] module 'EncoderBCD' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:4' bound to instance 'bcdEncoderSeconds' of component 'EncoderBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:128]
-INFO: [Synth 8-638] synthesizing module 'EncoderBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:12]
+INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:5' bound to instance 'upButtonDebouncer' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:169]
+INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:5' bound to instance 'downButtonDebouncer' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:177]
+INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd:5' bound to instance 'cancelButtonDebouncer' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:185]
+INFO: [Synth 8-3491] module 'EncoderDecimalBCD' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:4' bound to instance 'bcdEncoderSeconds' of component 'EncoderDecimalBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:193]
+INFO: [Synth 8-638] synthesizing module 'EncoderDecimalBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:12]
 INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'EncoderBCD' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:12]
-INFO: [Synth 8-3491] module 'EncoderBCD' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:4' bound to instance 'bcdEncoderMinutes' of component 'EncoderBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:135]
-INFO: [Synth 8-3491] module 'EncoderBCD' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:4' bound to instance 'bcdEncoderHours' of component 'EncoderBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:142]
+INFO: [Synth 8-256] done synthesizing module 'EncoderDecimalBCD' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:12]
+INFO: [Synth 8-3491] module 'EncoderDecimalBCD' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:4' bound to instance 'bcdEncoderMinutes' of component 'EncoderDecimalBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:200]
+INFO: [Synth 8-3491] module 'EncoderDecimalBCD' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd:4' bound to instance 'bcdEncoderHours' of component 'EncoderDecimalBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:207]
 	Parameter CLKIN_freq bound to: 100000000 - type: integer 
 	Parameter CLKOUT_freq bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'clock_filter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:32' bound to instance 'singleHzDivider' of component 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:149]
-INFO: [Synth 8-638] synthesizing module 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:44]
+INFO: [Synth 8-3491] module 'clock_filter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:4' bound to instance 'singleHzDivider' of component 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:214]
+INFO: [Synth 8-638] synthesizing module 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:16]
 	Parameter CLKIN_freq bound to: 100000000 - type: integer 
 	Parameter CLKOUT_freq bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clock_filter' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:44]
-INFO: [Synth 8-3491] module 'display_seven_segments' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:4' bound to instance 'display' of component 'display_seven_segments' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:160]
+INFO: [Synth 8-256] done synthesizing module 'clock_filter' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:16]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'Mux3to1' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Mux3to1.vhd:4' bound to instance 'displayMux' of component 'Mux3to1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:229]
+INFO: [Synth 8-638] synthesizing module 'Mux3to1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Mux3to1.vhd:15]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Mux3to1' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Mux3to1.vhd:15]
+INFO: [Synth 8-3491] module 'display_seven_segments' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:4' bound to instance 'display' of component 'display_seven_segments' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:241]
 INFO: [Synth 8-638] synthesizing module 'display_seven_segments' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:18]
 	Parameter CLKIN_freq bound to: 100000000 - type: integer 
 	Parameter CLKOUT_freq bound to: 500 - type: integer 
 	Parameter CLKIN_freq bound to: 100000000 - type: integer 
 	Parameter CLKOUT_freq bound to: 500 - type: integer 
-INFO: [Synth 8-3491] module 'clock_filter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:32' bound to instance 'clk_filter' of component 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:66]
-INFO: [Synth 8-638] synthesizing module 'clock_filter__parameterized1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:44]
+INFO: [Synth 8-3491] module 'clock_filter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:4' bound to instance 'clk_filter' of component 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'clock_filter__parameterized1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:16]
 	Parameter CLKIN_freq bound to: 100000000 - type: integer 
 	Parameter CLKOUT_freq bound to: 500 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clock_filter__parameterized1' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:44]
-INFO: [Synth 8-3491] module 'counter_mod8' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/counter_mod8.vhd:34' bound to instance 'counter_instance' of component 'counter_mod8' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:76]
+INFO: [Synth 8-256] done synthesizing module 'clock_filter__parameterized1' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd:16]
+INFO: [Synth 8-3491] module 'counter_mod8' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/counter_mod8.vhd:34' bound to instance 'counter_instance' of component 'counter_mod8' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:73]
 INFO: [Synth 8-638] synthesizing module 'counter_mod8' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/counter_mod8.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'counter_mod8' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/counter_mod8.vhd:41]
-INFO: [Synth 8-3491] module 'cathodes_manager' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:32' bound to instance 'cathodes_instance' of component 'cathodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:84]
+INFO: [Synth 8-3491] module 'cathodes_manager' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:32' bound to instance 'cathodes_instance' of component 'cathodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:80]
 INFO: [Synth 8-638] synthesizing module 'cathodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:39]
 INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:78]
 WARNING: [Synth 8-614] signal 'value' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:75]
 WARNING: [Synth 8-614] signal 'dots' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:75]
 INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:111]
 INFO: [Synth 8-256] done synthesizing module 'cathodes_manager' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd:39]
-INFO: [Synth 8-3491] module 'anodes_manager' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/anodes_manager.vhd:32' bound to instance 'anodes_instance' of component 'anodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:91]
+INFO: [Synth 8-3491] module 'anodes_manager' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/anodes_manager.vhd:32' bound to instance 'anodes_instance' of component 'anodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:87]
 INFO: [Synth 8-638] synthesizing module 'anodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/anodes_manager.vhd:39]
 INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/anodes_manager.vhd:51]
 INFO: [Synth 8-256] done synthesizing module 'anodes_manager' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/anodes_manager.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'display_seven_segments' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd:18]
-INFO: [Synth 8-3491] module 'cronometro' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:5' bound to instance 'orologio' of component 'cronometro' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:171]
+INFO: [Synth 8-3491] module 'cronometro' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:5' bound to instance 'orologio' of component 'cronometro' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:252]
 INFO: [Synth 8-638] synthesizing module 'cronometro' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:20]
-INFO: [Synth 8-3491] module 'counter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:9' bound to instance 'count_mod64_1' of component 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:46]
-INFO: [Synth 8-638] synthesizing module 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:21]
+INFO: [Synth 8-3491] module 'counter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:5' bound to instance 'count_mod64_1' of component 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:18]
 	Parameter DIM bound to: 6 - type: integer 
-WARNING: [Synth 8-614] signal 'load' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:29]
-INFO: [Synth 8-256] done synthesizing module 'counter' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:21]
-INFO: [Synth 8-3491] module 'counter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:9' bound to instance 'count_mod64_2' of component 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:57]
-INFO: [Synth 8-3491] module 'counter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:9' bound to instance 'count_mod64_3' of component 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:68]
+WARNING: [Synth 8-614] signal 'loadValue' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:26]
+INFO: [Synth 8-256] done synthesizing module 'counter' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:18]
+INFO: [Synth 8-3491] module 'counter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:5' bound to instance 'count_mod64_2' of component 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:59]
+INFO: [Synth 8-3491] module 'counter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/counter_generic.vhdl:5' bound to instance 'count_mod64_3' of component 'counter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:71]
 INFO: [Synth 8-256] done synthesizing module 'cronometro' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd:20]
-INFO: [Synth 8-3491] module 'BoardControlUnit' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:4' bound to instance 'controlUnit' of component 'BoardControlUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:185]
+INFO: [Synth 8-3491] module 'BoardControlUnit' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:4' bound to instance 'controlUnit' of component 'BoardControlUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:268]
 INFO: [Synth 8-638] synthesizing module 'BoardControlUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:20]
-WARNING: [Synth 8-614] signal 'hourInput' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:52]
-WARNING: [Synth 8-614] signal 'minInput' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:52]
-WARNING: [Synth 8-614] signal 'secInput' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:52]
-WARNING: [Synth 8-614] signal 'selSecLink' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:52]
-WARNING: [Synth 8-614] signal 'switchInput' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:52]
-WARNING: [Synth 8-614] signal 'selMinLink' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:52]
-WARNING: [Synth 8-614] signal 'selHourLink' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:52]
+WARNING: [Synth 8-614] signal 'switchInput' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'BoardControlUnit' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'BoardUnit' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:14]
-WARNING: [Synth 8-7129] Port cancelSignal in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[15] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[14] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[13] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[12] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[11] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[10] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[9] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[8] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[7] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switchInput[6] in module BoardControlUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port btnCancel in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port btnDown in module BoardUnit is either unconnected or has no load
+	Parameter dim bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'UpDownCounter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/UpDownCounter.vhd:5' bound to instance 'memAddressCounter' of component 'UpDownCounter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:286]
+INFO: [Synth 8-638] synthesizing module 'UpDownCounter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/UpDownCounter.vhd:17]
+	Parameter dim bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'UpDownCounter' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/UpDownCounter.vhd:17]
+INFO: [Synth 8-3491] module 'EncoderOneHotBCD' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderOneHotBCD.vhd:4' bound to instance 'selectedAddress' of component 'EncoderOneHotBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:298]
+INFO: [Synth 8-638] synthesizing module 'EncoderOneHotBCD' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderOneHotBCD.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'EncoderOneHotBCD' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderOneHotBCD.vhd:12]
+	Parameter address_length bound to: 4 - type: integer 
+	Parameter data_length bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'mem' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/mem.vhd:5' bound to instance 'memoriaIntertempi' of component 'mem' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:305]
+INFO: [Synth 8-638] synthesizing module 'mem' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/mem.vhd:20]
+	Parameter address_length bound to: 4 - type: integer 
+	Parameter data_length bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mem' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/mem.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'BoardUnit' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd:15]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2118.625 ; gain = 483.652 ; free physical = 1484 ; free virtual = 7022
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2119.168 ; gain = 482.684 ; free physical = 198 ; free virtual = 3271
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2136.438 ; gain = 501.465 ; free physical = 1483 ; free virtual = 7021
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2134.012 ; gain = 497.527 ; free physical = 196 ; free virtual = 3269
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2136.438 ; gain = 501.465 ; free physical = 1483 ; free virtual = 7021
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2134.012 ; gain = 497.527 ; free physical = 196 ; free virtual = 3269
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2136.438 ; gain = 0.000 ; free physical = 1483 ; free virtual = 7021
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2134.012 ; gain = 0.000 ; free physical = 196 ; free virtual = 3269
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Nexys-A7-100T-Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'ledOut'. [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Nexys-A7-100T-Master.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Nexys-A7-100T-Master.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Nexys-A7-100T-Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/BoardUnit_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/BoardUnit_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2288.188 ; gain = 0.000 ; free physical = 1463 ; free virtual = 7001
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2283.762 ; gain = 0.000 ; free physical = 172 ; free virtual = 3257
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2288.223 ; gain = 0.000 ; free physical = 1463 ; free virtual = 7001
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2283.797 ; gain = 0.000 ; free physical = 172 ; free virtual = 3257
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1446 ; free virtual = 6984
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 167 ; free virtual = 3253
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1446 ; free virtual = 6984
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 167 ; free virtual = 3253
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1446 ; free virtual = 6984
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 167 ; free virtual = 3253
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'BTN_state_reg' in module 'ButtonDebouncer'
 INFO: [Synth 8-802] inferred FSM for state register 'currentState_reg' in module 'BoardControlUnit'
@@ -172,54 +171,60 @@ INFO: [Synth 8-3354] encoded FSM with state register 'BTN_state_reg' using encod
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    idle |                          0000001 |                              000
-          settingseconds |                          0000010 |                              001
-          settingminutes |                          0000100 |                              010
-            settinghours |                          0001000 |                              011
-            disablestate |                          0010000 |                              100
-            loadingstate |                          0100000 |                              101
-             enablestate |                          1000000 |                              110
+                    idle |                       0000000001 |                             0000
+          settingseconds |                       0000000010 |                             0001
+          settingminutes |                       0000000100 |                             0010
+            settinghours |                       0000001000 |                             0011
+            disablestate |                       0000010000 |                             0100
+            loadingstate |                       0000100000 |                             0101
+             enablestate |                       0001000000 |                             0110
+          intertimestate |                       0010000000 |                             1000
+             readfrommem |                       0100000000 |                             0111
+              storeinmem |                       1000000000 |                             1001
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'currentState_reg' using encoding 'one-hot' in module 'BoardControlUnit'
-WARNING: [Synth 8-327] inferring latch for variable 'selSecLink_reg' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:75]
-WARNING: [Synth 8-327] inferring latch for variable 'selMinLink_reg' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:85]
-WARNING: [Synth 8-327] inferring latch for variable 'selHourLink_reg' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:95]
+WARNING: [Synth 8-327] inferring latch for variable 'selSecLink_reg' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:67]
+WARNING: [Synth 8-327] inferring latch for variable 'selMinLink_reg' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:76]
+WARNING: [Synth 8-327] inferring latch for variable 'selHourLink_reg' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd:85]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1441 ; free virtual = 6980
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 156 ; free virtual = 3243
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-223] decloning instance 'upButtonDebouncer' (ButtonDebouncer) to 'downButtonDebouncer'
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 4     
 	   2 Input   27 Bit       Adders := 1     
 	   2 Input   18 Bit       Adders := 1     
 	   2 Input    6 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 1     
 	   2 Input    3 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 5     
 	               27 Bit    Registers := 1     
 	               18 Bit    Registers := 1     
 	                6 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                1 Bit    Registers := 9     
++---RAMs : 
+	              512 Bit	(16 X 32 bit)          RAMs := 1     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 5     
-	   7 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 4     
+	   3 Input   32 Bit        Muxes := 1     
 	   2 Input   27 Bit        Muxes := 1     
 	   2 Input   18 Bit        Muxes := 1     
+	  10 Input   10 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 8     
 	   8 Input    8 Bit        Muxes := 1     
-	   7 Input    7 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 4     
-	   2 Input    6 Bit        Muxes := 16    
-	   7 Input    6 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 12    
-	   4 Input    1 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 3     
-	   7 Input    1 Bit        Muxes := 4     
+	   2 Input    6 Bit        Muxes := 15    
+	   4 Input    2 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 28    
+	  10 Input    2 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 8     
+	  10 Input    1 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -236,37 +241,32 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port btnCancel in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port btnDown in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[15] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[14] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[13] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[12] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[11] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[10] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[9] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[8] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[7] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port switch[6] in module BoardUnit is either unconnected or has no load
-WARNING: [Synth 8-3332] Sequential element (upButtonDebouncer/FSM_sequential_BTN_state_reg[1]) is unused and will be removed from module BoardUnit.
-WARNING: [Synth 8-3332] Sequential element (upButtonDebouncer/FSM_sequential_BTN_state_reg[0]) is unused and will be removed from module BoardUnit.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1406 ; free virtual = 6950
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 238 ; free virtual = 3229
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 ROM: Preliminary Mapping Report
-+------------+--------------------------+---------------+----------------+
-|Module Name | RTL Object               | Depth x Width | Implemented As | 
-+------------+--------------------------+---------------+----------------+
-|EncoderBCD  | output                   | 64x7          | LUT            | 
-|BoardUnit   | bcdEncoderSeconds/output | 64x7          | LUT            | 
-|BoardUnit   | bcdEncoderMinutes/output | 64x7          | LUT            | 
-|BoardUnit   | bcdEncoderHours/output   | 64x7          | LUT            | 
-+------------+--------------------------+---------------+----------------+
++------------------+--------------------------+---------------+----------------+
+|Module Name       | RTL Object               | Depth x Width | Implemented As | 
++------------------+--------------------------+---------------+----------------+
+|EncoderDecimalBCD | output                   | 64x7          | LUT            | 
+|BoardUnit         | bcdEncoderSeconds/output | 64x7          | LUT            | 
+|BoardUnit         | bcdEncoderMinutes/output | 64x7          | LUT            | 
+|BoardUnit         | bcdEncoderHours/output   | 64x7          | LUT            | 
++------------------+--------------------------+---------------+----------------+
 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                | Inference | Size (Depth x Width) | Primitives     | 
++------------+---------------------------+-----------+----------------------+----------------+
+|BoardUnit   | memoriaIntertempi/ram_reg | Implied   | 16 x 32              | RAM16X1S x 32  | 
++------------+---------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -274,19 +274,33 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1406 ; free virtual = 6949
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 230 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1406 ; free virtual = 6949
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 230 ; free virtual = 3228
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+---------------------------+-----------+----------------------+----------------+
+|Module Name | RTL Object                | Inference | Size (Depth x Width) | Primitives     | 
++------------+---------------------------+-----------+----------------------+----------------+
+|BoardUnit   | memoriaIntertempi/ram_reg | Implied   | 16 x 32              | RAM16X1S x 32  | 
++------------+---------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1406 ; free virtual = 6949
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -304,37 +318,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6949
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6949
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6949
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6949
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6949
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6949
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -347,53 +361,54 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    20|
-|3     |LUT1   |     3|
-|4     |LUT2   |    26|
-|5     |LUT3   |    76|
-|6     |LUT4   |    55|
-|7     |LUT5   |    40|
-|8     |LUT6   |    70|
-|9     |FDCE   |    18|
-|10    |FDPE   |    18|
-|11    |FDRE   |    93|
-|12    |FDSE   |     1|
-|13    |LD     |    18|
-|14    |LDC    |    18|
-|15    |IBUF   |     9|
-|16    |OBUF   |    16|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    44|
+|3     |LUT1     |     5|
+|4     |LUT2     |    61|
+|5     |LUT3     |    89|
+|6     |LUT4     |    63|
+|7     |LUT5     |    55|
+|8     |LUT6     |    78|
+|9     |RAM16X1S |    21|
+|10    |FDCE     |    18|
+|11    |FDPE     |    18|
+|12    |FDRE     |   226|
+|13    |FDSE     |     1|
+|14    |LD       |    18|
+|15    |LDC      |    18|
+|16    |IBUF     |    12|
+|17    |OBUF     |    32|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6949
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2288.223 ; gain = 501.465 ; free physical = 1405 ; free virtual = 6948
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2288.223 ; gain = 653.250 ; free physical = 1405 ; free virtual = 6948
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2283.797 ; gain = 497.527 ; free physical = 229 ; free virtual = 3228
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2283.797 ; gain = 647.312 ; free physical = 229 ; free virtual = 3228
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2288.223 ; gain = 0.000 ; free physical = 1688 ; free virtual = 7231
-INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2283.797 ; gain = 0.000 ; free physical = 518 ; free virtual = 3516
+INFO: [Netlist 29-17] Analyzing 101 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2288.223 ; gain = 0.000 ; free physical = 1689 ; free virtual = 7232
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2283.797 ; gain = 0.000 ; free physical = 515 ; free virtual = 3514
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 36 instances were transformed.
+  A total of 57 instances were transformed.
   LD => LDCE: 18 instances
   LDC => LDCE: 18 instances
+  RAM16X1S => RAM32X1S (RAMS32): 21 instances
 
-Synth Design complete | Checksum: 6caf5318
+Synth Design complete | Checksum: e6faca3b
 INFO: [Common 17-83] Releasing license: Synthesis
-72 Infos, 42 Warnings, 1 Critical Warnings and 0 Errors encountered.
+84 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 2288.223 ; gain = 999.195 ; free physical = 1689 ; free virtual = 7232
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1855.512; main = 1528.540; forked = 378.656
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3245.430; main = 2288.191; forked = 989.254
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2312.199 ; gain = 0.000 ; free physical = 1689 ; free virtual = 7232
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 2283.797 ; gain = 964.352 ; free physical = 514 ; free virtual = 3514
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1853.834; main = 1526.053; forked = 378.352
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3241.000; main = 2283.766; forked = 989.250
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2307.773 ; gain = 0.000 ; free physical = 514 ; free virtual = 3514
 INFO: [Common 17-1381] The checkpoint '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Vivado/Cronometro.runs/synth_1/BoardUnit.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file BoardUnit_utilization_synth.rpt -pb BoardUnit_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 20 18:36:47 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 22 17:28:09 2024...

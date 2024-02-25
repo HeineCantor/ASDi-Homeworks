@@ -104,6 +104,9 @@ read_vhdl -library xil_defaultlib {
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7/Display7Seg - Vivado/display_seven_segments.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7/Display7Seg - Vivado/cathodes_manager.vhd}
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7/debouncer.vhd
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7/BoardControlUnit.vhd
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7/EncoderBCD.vhd
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7/EncoderBCD16.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

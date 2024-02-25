@@ -9,8 +9,8 @@ entity display_seven_segments is
     Port ( CLK : in  STD_LOGIC;
            RST : in  STD_LOGIC;
            VALUE : in  STD_LOGIC_VECTOR (31 downto 0);
-           ENABLE : in  STD_LOGIC_VECTOR (7 downto 0); -- decide quali cifre abilitare
-           DOTS : in  STD_LOGIC_VECTOR (7 downto 0); -- decide quali punti visualizzare
+           ENABLE : in  STD_LOGIC_VECTOR (7 downto 0);
+           DOTS : in  STD_LOGIC_VECTOR (7 downto 0);
            ANODES : out  STD_LOGIC_VECTOR (7 downto 0);
            CATHODES : out  STD_LOGIC_VECTOR (7 downto 0));
 end display_seven_segments;
@@ -59,9 +59,6 @@ COMPONENT clock_filter
 		);
 END COMPONENT;
 begin
---il clock filter genera un segnale di abilitazione per il contatore mod8 che viene usato
---come segnale di conteggio e quindi di fatto fornisce la frequenza con cui viene modificata
---la cifra da mostrare
 
 clk_filter: clock_filter GENERIC MAP(
 	CLKIN_freq => CLKIN_freq,
@@ -79,8 +76,7 @@ counter_instance: counter_mod8 port map(
 	reset => RST,
 	counter => counter
 );
---il valore di conteggio viene usato dal gestore dei catodi e degli anodi per
---selezionare l'anodo da accendere e il suo rispettivo valore
+
 cathodes_instance: cathodes_manager port map(
 	counter => counter,
 	value => value,
@@ -93,7 +89,6 @@ anodes_instance: anodes_manager port map(
 	enable_digit => enable,
 	anodes => anodes
 );
-
 
 end Structural;
 

@@ -24,8 +24,9 @@ generic( DIM: integer :=6 );
     Port ( clock : in  STD_LOGIC;
            reset : in  STD_LOGIC;
 		   enable : in STD_LOGIC;
+		   maxCount: in std_logic_vector(dim-1 downto 0);
 		   set: in STD_LOGIC;
-		   load: in STD_LOGIC_VECTOR ((DIM-1) downto 0);
+		   loadValue: in STD_LOGIC_VECTOR ((DIM-1) downto 0);
            counter : out  STD_LOGIC_VECTOR ((DIM-1) downto 0);
            overflow: out std_logic
          );
@@ -48,8 +49,9 @@ begin
     clock => C,
     reset => R,
 	enable => EN,
+	maxCount => "111011",
 	set => SET,
-	load => LOAD_SEC,
+	loadValue => LOAD_SEC,
     counter => S1,
     overflow => Q1
     );
@@ -59,8 +61,9 @@ begin
     clock => Q1,
     reset => R,
 	enable => EN,
+	maxCount => "111011",
 	set => SET,
-	load => LOAD_MIN,
+	loadValue => LOAD_MIN,
     counter => S2,
     overflow => Q2
     );
@@ -70,8 +73,9 @@ begin
     clock => Q2,
     reset => R,
 	enable => EN,
+	maxCount => "010111",
     set => SET,
-	load => LOAD_HOUR,
+	loadValue => LOAD_HOUR,
     counter => S3,
     overflow => Q3
     );

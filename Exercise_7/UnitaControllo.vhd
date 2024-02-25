@@ -33,7 +33,7 @@ begin
         end if;
     end process;
     
-    automa: process(currentState, start, count)
+    automa: process(currentState, start, count, q0, q_1)
     begin
         countIn <= '0';
         subSignal <= '0';

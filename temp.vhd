@@ -1,67 +1,36 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
 
-entity MoltiplicatoreBooth_tb is
-end MoltiplicatoreBooth_tb;
-
-architecture structural of MoltiplicatoreBooth_tb is
-
-    component MoltiplicatoreBooth is
-        port(
-            clock, reset, start:    in std_logic;
-            X, Y:               in std_logic_vector(7 downto 0);
-            
-            P:                  out std_logic_vector(15 downto 0);
-            productFinished:    out std_logic
-        );
-    end component;
-
-    signal X, Y: std_logic_vector(7 downto 0);
-    signal clock, reset, start: std_logic;
-    
-    signal result: std_logic_vector(15 downto 0);
-    signal outputReady: std_logic;
-
-    constant CLK_period : time := 10 ns;
-begin
-
-    simClock: process    
-    begin
-        clock <= '0';
-        wait for CLK_period;
-        clock <= '1';
-        wait for CLK_period;
-    end process;
-
-    uut: MoltiplicatoreBooth
-    port map(
-        X => X,
-        Y => Y,
-        
-        clock => clock,
-        reset => reset,
-        start => start,
-        
-        P => result,
-        productFinished => outputReady
+entity mem is
+    generic(
+        address_length: natural := 3;
+        data_length: natural := 4
     );
-
-    simProcess: process
-    begin
-        wait for 100ns;
-        
-        X <= "11111011";
-        Y <= "11111011";
-        
-        wait for 10ns;
-        
-        start <= '1';
-        wait for 30ns;
-        start <= '0';
-        
-        wait for 30ns;
-        
-        wait;
-    
-    end process;
-end structural;
+    port(
+        clock: in std_logic;
+        read: in std_logic;
+        write: in std_logic;
+        address: in std_logic_vector(address_length - 1 downto 0);
+        data_input: in std_logic_vector (data_length - 1 downto 0);
+        data_output: out std_logic_vector (data_length - 1 downto 0) := (others => '0')
+    );
+end mem;
+ 
+architecture behavioral of mem is
+    type ram_type is array (0 to 2**address_length -1) of std_logic_vector(data_length - 1 downto 0);
+    signal ram: ram_type;
+begin
+ 
+process(clock) is
+begin
+    if rising_edge(clock)then
+        if(read = '1') then
+            data_output <= ram(conv_integer(unsigned(address)));
+        elsif (write = '1') then
+            ram(conv_integer(unsigned(address))) <= data_input;
+        end if;     
+    end if;
+end process;
+ 
+end behavioral;

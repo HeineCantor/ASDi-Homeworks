@@ -1,15 +1,15 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity EncoderBCD is
+entity EncoderDecimalBCD is
     port(
         input: in std_logic_vector(0 to 5);
         
         output: out std_logic_vector(7 downto 0)
     );
-end EncoderBCD;
+end EncoderDecimalBCD;
 
-architecture Dataflow of EncoderBCD is
+architecture Dataflow of EncoderDecimalBCD is
 
 begin
     with input select

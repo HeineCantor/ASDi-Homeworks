@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-| Date         : Mon Feb 19 15:33:17 2024
+| Date         : Sat Feb 24 13:04:26 2024
 | Host         : heinecantor-desktop running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_utilization -file BoardUnit_utilization_synth.rpt -pb BoardUnit_utilization_synth.pb
 | Design       : BoardUnit
@@ -31,14 +31,14 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |   97 |     0 |          0 |     63400 |  0.15 |
-|   LUT as Logic          |   97 |     0 |          0 |     63400 |  0.15 |
+| Slice LUTs*             |  823 |     0 |          0 |     63400 |  1.30 |
+|   LUT as Logic          |  823 |     0 |          0 |     63400 |  1.30 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         |  120 |     0 |          0 |    126800 |  0.09 |
-|   Register as Flip Flop |   94 |     0 |          0 |    126800 |  0.07 |
-|   Register as Latch     |   26 |     0 |          0 |    126800 |  0.02 |
-| F7 Muxes                |    0 |     0 |          0 |     31700 |  0.00 |
-| F8 Muxes                |    0 |     0 |          0 |     15850 |  0.00 |
+| Slice Registers         |  104 |     0 |          0 |    126800 |  0.08 |
+|   Register as Flip Flop |  104 |     0 |          0 |    126800 |  0.08 |
+|   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
+| F7 Muxes                |   54 |     0 |          0 |     31700 |  0.17 |
+| F8 Muxes                |   16 |     0 |          0 |     15850 |  0.10 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -57,9 +57,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 26    |          Yes |           - |        Reset |
+| 0     |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 93    |          Yes |       Reset |            - |
+| 103   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,17 +148,18 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   93 |        Flop & Latch |
-| LUT2     |   38 |                 LUT |
-| LDCE     |   26 |        Flop & Latch |
-| LUT5     |   25 |                 LUT |
-| LUT4     |   25 |                 LUT |
-| LUT6     |   24 |                 LUT |
-| LUT3     |   19 |                 LUT |
+| LUT6     |  617 |                 LUT |
+| LUT5     |  154 |                 LUT |
+| FDRE     |  103 |        Flop & Latch |
+| LUT4     |   60 |                 LUT |
+| MUXF7    |   54 |               MuxFx |
+| LUT2     |   41 |                 LUT |
+| LUT3     |   39 |                 LUT |
 | IBUF     |   19 |                  IO |
 | OBUF     |   17 |                  IO |
+| MUXF8    |   16 |               MuxFx |
 | CARRY4   |   13 |          CarryLogic |
-| LUT1     |    3 |                 LUT |
+| LUT1     |    2 |                 LUT |
 | FDSE     |    1 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

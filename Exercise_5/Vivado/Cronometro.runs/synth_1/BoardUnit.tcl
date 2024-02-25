@@ -72,7 +72,6 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -91,6 +90,9 @@ OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardControlUnit.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderBCD.vhd
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/EncoderOneHotBCD.vhd
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Mux3to1.vhd
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/UpDownCounter.vhd
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/anodes_manager.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/cathodes_manager.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/clock_filter.vhd}
@@ -99,6 +101,7 @@ read_vhdl -library xil_defaultlib {
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/CounterBehavioural/cronometro.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/debouncer.vhd
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/Display7Seg - Vivado/display_seven_segments.vhd}
+  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/mem.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_5/BoardUnit.vhd
 }
 OPTRACE "Adding files" END { }

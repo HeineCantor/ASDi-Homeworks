@@ -21,17 +21,33 @@ architecture structural of BoardUnit is
         Port ( CLK : in  STD_LOGIC;
                RST : in  STD_LOGIC;
                VALUE : in  STD_LOGIC_VECTOR (31 downto 0);
-               ENABLE : in  STD_LOGIC_VECTOR (7 downto 0); -- decide quali cifre abilitare
-               DOTS : in  STD_LOGIC_VECTOR (7 downto 0); -- decide quali punti visualizzare
+               ENABLE : in  STD_LOGIC_VECTOR (7 downto 0);
+               DOTS : in  STD_LOGIC_VECTOR (7 downto 0);
                ANODES : out  STD_LOGIC_VECTOR (7 downto 0);
                CATHODES : out  STD_LOGIC_VECTOR (7 downto 0));
     end component;
     
+    component EncoderSignedBCD is
+        port(
+            input: in std_logic_vector(7 downto 0);
+            
+            output: out std_logic_vector(15 downto 0)
+        );
+    end component;
+    
+    component EncoderSignedBCD16 is
+        port(
+            input: in std_logic_vector(15 downto 0);
+            
+            output: out std_logic_vector(23 downto 0)
+        );
+    end component;
+        
     component ButtonDebouncer is
         generic (                       
-            CLK_period: integer := 10;  -- periodo del clock (della board) in nanosecondi
-            btn_noise_time: integer := 10000000 -- durata stimata dell'oscillazione del bottone in nanosecondi
-                                                -- il valore di default è 10 millisecondi
+            CLK_period: integer := 10;
+            btn_noise_time: integer := 10000000 
+                                               
         );
         Port ( RST : in STD_LOGIC;
                CLK : in STD_LOGIC;
@@ -49,22 +65,46 @@ architecture structural of BoardUnit is
         );
     end component;
     
-    type state is (idle, startMultiplication, multiplicationFinished);
-    signal currentState, nextState: state;
+    component Mux2to1 is
+        generic (
+            width : integer range 1 to 32 := 8
+        );
+        port( 
+           a, b: in std_logic_vector(width-1 downto 0); 
+           sel: in std_logic;
+           c: out std_logic_vector(width-1 downto 0)
+        );
+    end component;
     
-    signal operandsToPrint: std_logic_vector(31 downto 0);
+    component BoardControlUnit is
+        port(
+            clock, reset: in std_logic;
+            
+            multiplySignal, productReady: in std_logic;
+            
+            startMultiplication, displaySelector: out std_logic;
+            productOperationFinish: out std_logic
+        );
+    end component;
+    
+    signal operand1, operand2: std_logic_vector(7 downto 0) := (others => '0');
+    signal displayOperand1, displayOperand2: std_logic_vector(15 downto 0) := (others => '0');
+    signal displayResult: std_logic_vector(23 downto 0);
+    signal operandsDisplay, resultDisplay, valueToPrint: std_logic_vector(31 downto 0);
     signal multiplySignal, start, reset: std_logic := '0';
     
     signal enableSignal: std_logic_vector(7 downto 0);
     
+    signal muxSelectorDisplay: std_logic := '0';
+    
     signal outputProduct: std_logic_vector(15 downto 0);
-    signal productReady: std_logic := '0';
+    signal productReady, operationFinished: std_logic := '0';
     
 begin
     boothMultiplier: MoltiplicatoreBooth
     port map(
-        X => switch(15 downto 8),
-        Y => switch(7 downto 0),
+        X => operand1,
+        Y => operand2,
         
         clock => clock,
         reset => reset,
@@ -82,58 +122,66 @@ begin
         cleared_btn => multiplySignal
     );
 
+    encoderOperand1: EncoderSignedBCD
+    port map(
+        input => operand1,
+        output => displayOperand1
+    );
+    
+    encoderOperand2: EncoderSignedBCD
+    port map(
+        input => operand2,
+        output => displayOperand2
+    );
+
+    encoderResult: EncoderSignedBCD16
+    port map(
+        input => outputProduct,
+        
+        output => displayResult
+    );
+
+    displayMux: Mux2to1
+    generic map(
+        width => 32
+    )
+    port map(
+        a => operandsDisplay,
+        b => resultDisplay,
+        sel => muxSelectorDisplay,
+        c => valueToPrint
+    );
+
     display: display_seven_segments
     port map(
         clk => clock,
         rst => reset,
-        value => operandsToPrint,
-        enable => enableSignal,
+        value => valueToPrint,
+        enable => (others => '1'),
         dots => "00000000",
         anodes => anodes,
         cathodes => cathodes
     );
     
+    controlUnit: BoardControlUnit
+    port map(
+        clock => clock,
+        reset => reset,
+        multiplySignal => multiplySignal,
+        productReady => productReady,
+        startMultiplication => start,
+        displaySelector => muxSelectorDisplay,
+        productOperationFinish => operationFinished
+    );
+    
+    operand1 <= switch(15 downto 8);
+    operand2 <= switch(7 downto 0);
+    
+    operandsDisplay <= displayOperand1 & displayOperand2;
+    resultDisplay <= "00000000" & displayResult;
+    --resultDisplay <= "0000000000000000" & outputProduct;
+    
     reset <= btnReset;
-    
-    updateState: process(clock)
-    begin
-        if(clock'event and clock='1') then
-            if(reset='1') then
-                currentState <= idle;
-            else
-                currentState <= nextState;
-            end if;    
-        end if;
-    end process;
-    
-    automa: process(currentState, multiplySignal, productReady)
-    begin
-        ledProductFinished <= '0';
-        start <= '0';
-    
-        case currentState is
-            when idle =>
-                if (multiplySignal = '1') then
-                    nextState <= startMultiplication;
-                else
-                    nextState <= idle;
-                    enableSignal <= "00110011";
-                    operandsToPrint <= "00000000" & switch(15 downto 8) & "00000000" & switch(7 downto 0);
-                end if;
-            when startMultiplication =>
-                start <= '1';
-                
-                if (productReady = '1') then
-                    nextState <= multiplicationFinished;
-                else
-                    nextState <= startMultiplication;
-                end if;
-            when multiplicationFinished =>
-                nextState <= multiplicationFinished;
-                ledProductFinished <= '1';
-                enableSignal <= "00001111";
-                operandsToPrint <= "0000000000000000" & outputProduct;
-        end case;
-    end process;
+    ledProductFinished <= operationFinished;
 
 end structural;

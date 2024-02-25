@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1708353174" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/BoardUnit.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1708776205" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/BoardUnit.dcp">
   <File Type="VDS-TIMING-PB" Name="BoardUnit_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="BoardUnit_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="BoardUnit.dcp"/>
@@ -144,6 +144,24 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../debouncer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../BoardControlUnit.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../EncoderBCD.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../EncoderBCD16.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

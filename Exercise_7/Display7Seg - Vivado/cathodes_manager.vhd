@@ -1,39 +1,13 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    22:29:17 22/10/2012 
--- Design Name: 
--- Module Name:    cathode_manager - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity cathodes_manager is
     Port ( counter : in  STD_LOGIC_VECTOR (2 downto 0);
            value : in  STD_LOGIC_VECTOR (31 downto 0); --dato di mostrare sugli 8 display
            dots : in  STD_LOGIC_VECTOR (7 downto 0); --configurazione punti da accendere
-           cathodes : out  STD_LOGIC_VECTOR (7 downto 0)); --sono i 7 catodi più il punto
+           cathodes : out  STD_LOGIC_VECTOR (7 downto 0)); --sono i 7 catodi piï¿½ il punto
 end cathodes_manager;
 
 architecture Behavioral of cathodes_manager is
@@ -54,6 +28,7 @@ constant c      : std_logic_vector(6 downto 0) := "1000110";
 constant d      : std_logic_vector(6 downto 0) := "0100001"; 
 constant e      : std_logic_vector(6 downto 0) := "0000110"; 
 constant f      : std_logic_vector(6 downto 0) := "0001110";
+constant minus  : std_logic_vector(6 downto 0) := "0111111";
 
 alias digit_0 is value (3 downto 0);
 alias digit_1 is value (7 downto 4);
@@ -124,7 +99,7 @@ seven_segment_decoder_process: process(nibble)
       when "1100" => cathodes_for_digit <= c; 
       when "1101" => cathodes_for_digit <= d; 
       when "1110" => cathodes_for_digit <= e; 
-      when "1111" => cathodes_for_digit <= f;
+      when "1111" => cathodes_for_digit <= minus;
 		when others => cathodes_for_digit <= (others => '0');
     end case; 
   end process seven_segment_decoder_process;

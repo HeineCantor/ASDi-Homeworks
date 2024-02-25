@@ -19,7 +19,7 @@ architecture structural of UnitaOperativa is
 
     component Mux2to1 is
         generic (
-            width : integer range 0 to 16 := 8
+            width : integer range 1 to 32 := 8
         );
         port( 
            a, b: in std_logic_vector(width-1 downto 0); 
