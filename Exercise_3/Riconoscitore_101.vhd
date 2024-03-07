@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Riconoscitore_101 is
     Port ( 
         x: in std_logic;
-        A: in std_logic;
+        A, Amode: in std_logic;
         clock, reset: in std_logic;
         M: in std_logic := '1';
         y: out std_logic;
@@ -22,6 +22,7 @@ signal statoCorrente : stato := S0;
 signal statoProssimo : stato;
 
 signal yProssima : std_logic := '0';
+signal innerMode : std_logic;
 
 attribute fsmEncoding : string;
 attribute fsmEncoding of statoCorrente : signal is "one_hot";
@@ -34,7 +35,7 @@ begin
         when s0 =>
             debugState <= "10000";
             if(x='0') then
-                if (M='0') then
+                if (innerMode='0') then
                     statoProssimo <= s3;
                 else
                     statoProssimo <= s0;
@@ -51,7 +52,7 @@ begin
                 statoProssimo <= s2;
                 yProssima <= '0';
             else
-                if(M='0') then
+                if(innerMode='0') then
                     statoProssimo <= s4;
                 else
                     statoProssimo <= s1;
@@ -100,6 +101,15 @@ begin
                 y <= yProssima;
             end if;
         end if;     
+    end process;
+    
+    modeSelector: process(clock)
+    begin
+        if(clock'event and clock='1') then
+            if (Amode = '1') then
+                innerMode <= M;
+            end if;
+        end if;
     end process;
 
 end Behavioral;

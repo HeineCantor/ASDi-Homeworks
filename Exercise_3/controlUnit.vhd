@@ -40,7 +40,7 @@ architecture Behavioral of controlUnit is
     component Riconoscitore_101 is
         Port ( 
             x: in std_logic;
-            A: in std_logic;
+            A, Amode: in std_logic;
             clock, reset: in std_logic;
             M: in std_logic := '1';
             y: out std_logic;
@@ -65,6 +65,7 @@ begin
     riconoscitore: Riconoscitore_101 port map(
         x=>switchInput,
         A=>pressedInput,
+        Amode => pressedMode,
         clock => CLK100MHZ,
         reset=>btnReset,
         M=>switchMode,
