@@ -11,6 +11,7 @@ architecture tb of tb_UART_SYSTEM is
         port (CLK      : in std_logic;
               RESET    : in std_logic;
               START    : in std_logic;
+              EN_WR, EN_RD: in STD_LOGIC;
               
               DATA_IN  : out std_logic_vector (7 downto 0);
               DATA_OUT : out std_logic_vector (7 downto 0);
@@ -33,7 +34,7 @@ architecture tb of tb_UART_SYSTEM is
     signal OE       : std_logic;
     signal WR       : std_logic;
     signal TY      : std_logic;
-    signal EN_COUNT     : std_logic;
+    signal EN_COUNT, EN_WR, EN_RD     : std_logic;
 
     signal clk_tb: STD_LOGIC;
     constant clk_period : time := 20 ns;
@@ -54,6 +55,8 @@ begin
     port map (CLK      => clk_tb,
               RESET    => RESET,
               START    => START,
+              EN_WR => EN_WR,
+              EN_RD => EN_RD,
               
               DATA_IN  => DATA_IN,
               DATA_OUT => DATA_OUT,
@@ -73,8 +76,16 @@ begin
        wait for 10 ns;
        
        start<='1';
-       --wait for 30 ns;  
+       en_wr <= '1';
+       wait for 80 ns;  
+       en_wr <= '1';
+       wait for 20ns;
+       en_wr <= '0';
 
+       wait for 1500us;  
+       en_wr <= '1';
+       wait for 20ns;
+       en_wr <= '0';
 
 
         wait;

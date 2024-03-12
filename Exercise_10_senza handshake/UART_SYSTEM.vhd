@@ -9,6 +9,7 @@ port(
     CLK: in STD_LOGIC;
     RESET: in STD_LOGIC;
     START: in STD_LOGIC;
+    EN_WR, EN_RD: in STD_LOGIC;
 
     DATA_IN: out STD_LOGIC_VECTOR(7 downto 0);
     DATA_OUT: out STD_LOGIC_VECTOR(7 downto 0);
@@ -33,6 +34,8 @@ port(
     START: in STD_LOGIC;
     CLK_A: in STD_LOGIC;
     RESET: in STD_LOGIC;
+    EN_WRITE: in STD_LOGIC;
+    
     DATA_OUT: out STD_LOGIC_VECTOR((M-1) downto 0);
 
     WR: out STD_LOGIC;   
@@ -95,6 +98,8 @@ port map(
     START=> START,
     CLK_A=> CLK,
     RESET=> RESET,
+    EN_WRITE => EN_WR,
+    
     DATA_OUT=> int_data,
     
     WR=> int_wr,

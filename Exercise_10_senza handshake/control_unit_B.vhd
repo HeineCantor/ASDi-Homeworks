@@ -61,7 +61,7 @@ CU_B: process(current_state, rda)
             enable_counter<='0';
             read_reg<='1';
             
-            rd<='0';
+            rd<='1';
             
             next_state<=MEM;
         

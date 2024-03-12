@@ -11,6 +11,8 @@ port (
     address_A: in STD_LOGIC_VECTOR((DIM-1) downto 0);
     clk_A: in STD_LOGIC;
     reset: in STD_LOGIC;
+    enable_write: in STD_LOGIC;
+    
     read: out STD_LOGIC;
     enable_counter: out STD_LOGIC;
     
@@ -21,7 +23,7 @@ end control_unit_A;
 
 architecture Behavioral of control_unit_A is
 type state is(
-    IDLE, INIT, WRITE, WAIT_TBE, EN_COUNTER
+    IDLE, INIT, WAIT_FOR_EN_WRITE, WAIT_TBE, EN_COUNTER
 );
 
 signal current_state, next_state: state;
@@ -40,7 +42,7 @@ MEM: process(clk_a)
    end process;
    
    
-CU_STATES: process(current_state, start, tbe, address_A)
+CU_STATES: process(current_state, start, tbe, address_A, enable_write)
     begin
    enable_counter <= '0';
    read <= '0';
@@ -57,12 +59,16 @@ CU_STATES: process(current_state, start, tbe, address_A)
        
         when INIT =>
             read <= '1';
-            next_state <= WRITE;
+            next_state <= WAIT_FOR_EN_WRITE;
        
 
-         when WRITE =>
-            wr <= '1';
-            next_state <= WAIT_TBE;
+         when WAIT_FOR_EN_WRITE =>
+             if(enable_write = '1') then
+                wr <= '1';
+                next_state <= WAIT_TBE;
+             else
+                next_state <= WAIT_FOR_EN_WRITE;
+             end if;
          
          when WAIT_TBE =>
             if tbe='0' then

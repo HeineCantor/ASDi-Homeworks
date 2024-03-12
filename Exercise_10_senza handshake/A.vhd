@@ -11,6 +11,8 @@ port(
     START: in STD_LOGIC;
     RESET: in STD_LOGIC;
     CLK_A: in STD_LOGIC;
+    EN_WRITE: in STD_LOGIC;
+    
     DATA_OUT: out STD_LOGIC_VECTOR((M-1) downto 0);
     
     WR: out STD_LOGIC;
@@ -51,6 +53,8 @@ port (
     address_A: in STD_LOGIC_VECTOR((DIM-1) downto 0);
     clk_A: in STD_LOGIC;
     reset: in STD_LOGIC;
+    enable_write: in STD_LOGIC;
+    
     read: out STD_LOGIC;
     enable_counter: out STD_LOGIC;
     
@@ -72,6 +76,8 @@ port map(
     address_A => addr_A,
     clk_a => CLK_A,
     reset => RESET,
+    enable_write => EN_WRITE,
+    
     read => re,
     enable_counter => count_en,
     
