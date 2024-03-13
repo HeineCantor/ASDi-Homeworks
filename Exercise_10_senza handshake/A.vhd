@@ -1,4 +1,3 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -8,7 +7,6 @@ generic(
     M: integer := 8 --lunghezza stringhe
 );
 port( 
-    START: in STD_LOGIC;
     RESET: in STD_LOGIC;
     CLK_A: in STD_LOGIC;
     EN_WRITE: in STD_LOGIC;
@@ -49,7 +47,6 @@ component control_unit_A is
 generic (
     DIM: integer :=3 );
 port ( 
-    start: in STD_LOGIC;
     address_A: in STD_LOGIC_VECTOR((DIM-1) downto 0);
     clk_A: in STD_LOGIC;
     reset: in STD_LOGIC;
@@ -72,7 +69,6 @@ begin
 
 CU_A: control_unit_A
 port map(
-    start => START,
     address_A => addr_A,
     clk_a => CLK_A,
     reset => RESET,

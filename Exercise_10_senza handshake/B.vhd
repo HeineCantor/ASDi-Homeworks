@@ -12,6 +12,8 @@ port(
     CLK_B: in STD_LOGIC;
     RESET: in STD_LOGIC;
     RDA: in STD_LOGIC;
+    EN_READ: in STD_LOGIC;
+    
     RD: out STD_LOGIC;
     DATA_OUT: out STD_LOGIC_VECTOR((M-1) downto 0)
 );
@@ -59,7 +61,9 @@ component control_unit_B is
 generic( DIM: integer :=3);
 port(
     clk_b: in STD_LOGIC;
-    reset: in STD_LOGIC;  
+    reset: in STD_LOGIC;
+    enableRead: in STD_LOGIC;
+      
     enable_counter: out STD_LOGIC;    
     write: out STD_LOGIC;
     read_reg: out STD_LOGIC;
@@ -95,7 +99,7 @@ port map(
     data_in => internal_data,
     address_B => addr,
     write => we,
-    read => re,  --ATTENZIONE INUTILE
+    read => re,
     Y => uscita_ram
 );
 
@@ -112,6 +116,8 @@ CU_B: control_unit_B
 port map(
     clk_b => CLK_B,
     reset => RESET,
+    enableRead => EN_READ,
+    
     enable_counter => en_counter,
     write => we,
     read_reg => re_reg,

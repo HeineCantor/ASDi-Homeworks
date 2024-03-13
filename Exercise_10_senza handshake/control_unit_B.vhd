@@ -8,6 +8,8 @@ generic( DIM: integer :=3);
 port(
     clk_b: in STD_LOGIC;
     reset: in STD_LOGIC; 
+    enableRead: in STD_LOGIC;
+    
     enable_counter: out STD_LOGIC;
     write: out STD_LOGIC;
     read_reg: out STD_LOGIC;
@@ -38,7 +40,7 @@ MEM_PROC: process(clk_b)
       
       
       
-CU_B: process(current_state, rda)
+CU_B: process(current_state, rda, enableRead)
     begin
     
     case current_state is
@@ -50,9 +52,9 @@ CU_B: process(current_state, rda)
             read_reg<='0';
             rd<='0';
             
-            if rda='0' then
+            if (rda='0' or enableRead = '0') then
                 next_state <= IDLE;
-            elsif rda='1' then
+            elsif (rda='1' and enableRead = '1') then
                 next_state<=R_W;
             end if;
         

@@ -8,7 +8,6 @@ port(
 
     CLK: in STD_LOGIC;
     RESET: in STD_LOGIC;
-    START: in STD_LOGIC;
     EN_WR, EN_RD: in STD_LOGIC;
 
     DATA_IN: out STD_LOGIC_VECTOR(7 downto 0);
@@ -31,7 +30,6 @@ generic(
     M: integer := 8 --lunghezza stringhe
 );
 port( 
-    START: in STD_LOGIC;
     CLK_A: in STD_LOGIC;
     RESET: in STD_LOGIC;
     EN_WRITE: in STD_LOGIC;
@@ -52,6 +50,8 @@ port(
     DATA_IN: in STD_LOGIC_VECTOR((M-1) downto 0);
     CLK_B: in STD_LOGIC;
     RESET: in STD_LOGIC;
+    EN_READ: in STD_LOGIC;
+    
     RDA: in STD_LOGIC;
     RD: out STD_LOGIC;
     DATA_OUT: out STD_LOGIC_VECTOR((M-1) downto 0)
@@ -95,7 +95,6 @@ begin
 
 COMP_A: A
 port map(
-    START=> START,
     CLK_A=> CLK,
     RESET=> RESET,
     EN_WRITE => EN_WR,
@@ -147,6 +146,7 @@ port map(
     DATA_IN=> dbout,
     CLK_B=> CLK,
     RESET=> RESET,
+    EN_READ => EN_RD,
     RDA=> int_rda,
     RD=> int_rd,
     DATA_OUT => d

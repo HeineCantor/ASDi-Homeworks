@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1710246660">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="BoardUnit_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="BoardUnit_routed.rqs"/>
+  <File Type="PA-TCL" Name="BoardUnit.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="BoardUnit_bus_skew_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="BoardUnit_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="BoardUnit_bus_skew_routed.rpx"/>
+  <File Type="INIT-TIMING" Name="BoardUnit_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="BoardUnit_opt.dcp"/>
+  <File Type="OPT-DRC" Name="BoardUnit_drc_opted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="BoardUnit_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="BoardUnit.hwdef"/>
+  <File Type="OPT-TIMING" Name="BoardUnit_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="BoardUnit_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="BoardUnit_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="BoardUnit_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="BoardUnit_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="BoardUnit_placed.dcp"/>
+  <File Type="PLACE-IO" Name="BoardUnit_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="BoardUnit_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="BoardUnit_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="BoardUnit_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="BoardUnit_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="BoardUnit_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="BoardUnit_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="BoardUnit_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="BoardUnit_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="BoardUnit_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="BoardUnit_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="BoardUnit_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="BoardUnit_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="BoardUnit_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="BoardUnit_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="BoardUnit_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="BoardUnit_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="BoardUnit_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="BoardUnit_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="BoardUnit_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="BoardUnit_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="BoardUnit_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="BoardUnit_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="BoardUnit_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="BoardUnit_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="BoardUnit_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="BoardUnit_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="BoardUnit_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="BoardUnit_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="BoardUnit_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="BoardUnit_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="BoardUnit_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="BoardUnit_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="BoardUnit_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-RQS-PB" Name="BoardUnit_rqs_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="BoardUnit_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="BoardUnit_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="tb_UART_SYSTEM_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="tb_UART_SYSTEM_timing_summary_postroute_physopted.pb"/>
+  <File Type="RDI-RDI" Name="BoardUnit.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="tb_UART_SYSTEM_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="tb_UART_SYSTEM_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="tb_UART_SYSTEM_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="tb_UART_SYSTEM_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="BoardUnit.bit"/>
+  <File Type="PDI-FILE" Name="BoardUnit.pdi"/>
+  <File Type="BG-BIN" Name="BoardUnit.bin"/>
+  <File Type="CFI_FILE" Name="BoardUnit.cfi"/>
+  <File Type="BITSTR-MSK" Name="BoardUnit.msk"/>
+  <File Type="RNPI_FILE" Name="BoardUnit.rnpi"/>
+  <File Type="BITSTR-RBT" Name="BoardUnit.rbt"/>
+  <File Type="NPI_FILE" Name="BoardUnit.npi"/>
+  <File Type="BITSTR-NKY" Name="BoardUnit.nky"/>
+  <File Type="RBD_FILE" Name="BoardUnit.rbd"/>
+  <File Type="BITSTR-BMM" Name="BoardUnit_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="BoardUnit.mmi"/>
+  <File Type="BOOT-PDI-FILE" Name="BoardUnit_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="BoardUnit_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="BoardUnit.rcfi"/>
+  <File Type="BG-BGN" Name="BoardUnit.bgn"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="BoardUnit.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="BoardUnit.sysdef"/>
+  <File Type="BG-DRC" Name="BoardUnit.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../A.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../B.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RAM.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ROM.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RS232RefComp.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../UART_SYSTEM.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../control_unit_A.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../control_unit_B.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../counter_generic.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../debouncer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../register_B.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../BoardUnit.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../UART_SYSTEM_tb.vhd">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="BoardUnit"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../Nexys-A7-100T-Master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

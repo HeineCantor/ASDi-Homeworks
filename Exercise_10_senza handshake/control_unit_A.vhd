@@ -1,13 +1,10 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
 
 entity control_unit_A is
 generic (
     DIM: integer :=3 );
 port ( 
-    start: in STD_LOGIC;
     address_A: in STD_LOGIC_VECTOR((DIM-1) downto 0);
     clk_A: in STD_LOGIC;
     reset: in STD_LOGIC;
@@ -42,20 +39,15 @@ MEM: process(clk_a)
    end process;
    
    
-CU_STATES: process(current_state, start, tbe, address_A, enable_write)
+CU_STATES: process(current_state, tbe, address_A, enable_write)
     begin
-   enable_counter <= '0';
-   read <= '0';
-   wr <= '0';
+    enable_counter <= '0';
+    read <= '0';
+    wr <= '0';
     case current_state is
     
         when IDLE =>
-            if start='0' then
-                next_state <= IDLE;
-            elsif start ='1' then
-                next_state <= INIT;
-            end if;
-            
+            next_state <= INIT;
        
         when INIT =>
             read <= '1';

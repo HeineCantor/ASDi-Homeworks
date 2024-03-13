@@ -81,6 +81,16 @@ begin
        en_wr <= '1';
        wait for 20ns;
        en_wr <= '0';
+       
+       wait for 10us;
+       en_rd <= '1';
+       wait for 20ns;
+       en_rd <= '0';
+       
+       wait for 200us;
+       en_rd <= '1';
+       wait for 20ns;
+       en_rd <= '0';       
 
        wait for 1500us;  
        en_wr <= '1';
