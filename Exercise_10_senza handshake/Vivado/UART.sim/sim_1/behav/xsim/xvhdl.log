@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_UART_SYSTEM'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'UART_SYSTEM'

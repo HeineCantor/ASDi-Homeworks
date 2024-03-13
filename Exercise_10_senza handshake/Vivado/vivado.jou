@@ -1,0 +1,93 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Mar 13 10:19:21 2024
+# Process ID: 7937
+# Current directory: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado
+# Command line: vivado /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.xpr
+# Log file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/vivado.log
+# Journal file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/vivado.jou
+# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 3712.889 MHz, CPU Physical cores: 16, Host memory: 14528 MB
+#-----------------------------------------------------------
+start_gui
+open_project {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.xpr}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/impl_1/BoardUnit.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+add_files {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/counter_mod8.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/clock_filter.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/anodes_manager.vhd}}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/impl_1/BoardUnit.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/impl_1/BoardUnit.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+set_property is_enabled false [get_files  {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd}}]
+set_property is_enabled true [get_files  {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM_tb.vhd}}]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_UART_SYSTEM [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_UART_SYSTEM [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_UART_SYSTEM.tcl
+restart
+run 1ms
+relaunch_sim
+restart
+run 1ms
+set_property is_enabled false [get_files  {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM_tb.vhd}}]
+set_property is_enabled true [get_files  {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd}}]
+update_compile_order -fileset sources_1
+set_property top BoardUnit [get_filesets sim_1]
+set_property top BoardUnit [current_fileset]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/impl_1/BoardUnit.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/impl_1/BoardUnit.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_sim

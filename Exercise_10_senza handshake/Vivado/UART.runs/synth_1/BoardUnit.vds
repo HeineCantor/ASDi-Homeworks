@@ -1,41 +1,71 @@
 #-----------------------------------------------------------
-# Vivado v2023.2.2 (64-bit)
-# SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
-# IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
-# SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
-# Start of session at: Tue Mar 12 13:31:05 2024
-# Process ID: 44317
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Mar 13 10:46:43 2024
+# Process ID: 119287
 # Current directory: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/synth_1
 # Command line: vivado -log BoardUnit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BoardUnit.tcl
 # Log file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/synth_1/BoardUnit.vds
 # Journal file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/synth_1/vivado.jou
-# Running On: heinecantor-laptop, OS: Linux, CPU Frequency: 1545.881 MHz, CPU Physical cores: 8, Host memory: 10285 MB
+# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 3705.626 MHz, CPU Physical cores: 16, Host memory: 14528 MB
 #-----------------------------------------------------------
 source BoardUnit.tcl -notrace
-create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1316.383 ; gain = 0.023 ; free physical = 375 ; free virtual = 7151
+Command: read_checkpoint -auto_incremental -incremental {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.srcs/utils_1/imports/synth_1/BoardUnit.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.srcs/utils_1/imports/synth_1/BoardUnit.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top BoardUnit -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 44363
+INFO: [Synth 8-7075] Helper process launched with PID 119304
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2016.230 ; gain = 403.746 ; free physical = 220 ; free virtual = 6288
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2041.141 ; gain = 404.715 ; free physical = 1879 ; free virtual = 9759
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'BoardUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:15]
-INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd:5' bound to instance 'debouncerWrite' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:54]
+INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd:5' bound to instance 'debouncerWrite' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:64]
 INFO: [Synth 8-638] synthesizing module 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd:17]
 	Parameter CLK_period bound to: 10 - type: integer 
 	Parameter btn_noise_time bound to: 10000000 - type: integer 
 INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd:36]
 INFO: [Synth 8-256] done synthesizing module 'ButtonDebouncer' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd:17]
-INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd:5' bound to instance 'debouncerRead' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:62]
-INFO: [Synth 8-3491] module 'UART_SYSTEM' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:5' bound to instance 'system' of component 'UART_SYSTEM' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:70]
-INFO: [Synth 8-638] synthesizing module 'UART_SYSTEM' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:25]
+INFO: [Synth 8-3491] module 'ButtonDebouncer' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd:5' bound to instance 'debouncerRead' of component 'ButtonDebouncer' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:72]
+INFO: [Synth 8-3491] module 'display_seven_segments' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd:4' bound to instance 'displayManager' of component 'display_seven_segments' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'display_seven_segments' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd:18]
+	Parameter CLKIN_freq bound to: 100000000 - type: integer 
+	Parameter CLKOUT_freq bound to: 500 - type: integer 
+	Parameter CLKIN_freq bound to: 100000000 - type: integer 
+	Parameter CLKOUT_freq bound to: 500 - type: integer 
+INFO: [Synth 8-3491] module 'clock_filter' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/clock_filter.vhd:4' bound to instance 'clk_filter' of component 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'clock_filter' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/clock_filter.vhd:16]
+	Parameter CLKIN_freq bound to: 100000000 - type: integer 
+	Parameter CLKOUT_freq bound to: 500 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_filter' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/clock_filter.vhd:16]
+INFO: [Synth 8-3491] module 'counter_mod8' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/counter_mod8.vhd:34' bound to instance 'counter_instance' of component 'counter_mod8' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'counter_mod8' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/counter_mod8.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'counter_mod8' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/counter_mod8.vhd:41]
+INFO: [Synth 8-3491] module 'cathodes_manager' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd:32' bound to instance 'cathodes_instance' of component 'cathodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'cathodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd:39]
+INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd:78]
+WARNING: [Synth 8-614] signal 'value' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd:75]
+WARNING: [Synth 8-614] signal 'dots' is read in the process but is not in the sensitivity list [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd:75]
+INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd:111]
+INFO: [Synth 8-256] done synthesizing module 'cathodes_manager' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd:39]
+INFO: [Synth 8-3491] module 'anodes_manager' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/anodes_manager.vhd:32' bound to instance 'anodes_instance' of component 'anodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'anodes_manager' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/anodes_manager.vhd:39]
+INFO: [Synth 8-226] default block is never used [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/anodes_manager.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'anodes_manager' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/anodes_manager.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'display_seven_segments' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd:18]
+INFO: [Synth 8-3491] module 'UART_SYSTEM' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:5' bound to instance 'system' of component 'UART_SYSTEM' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'UART_SYSTEM' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:20]
 	Parameter M bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'A' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/A.vhd:4' bound to instance 'COMP_A' of component 'A' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:96]
+INFO: [Synth 8-3491] module 'A' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/A.vhd:4' bound to instance 'COMP_A' of component 'A' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:91]
 INFO: [Synth 8-638] synthesizing module 'A' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/A.vhd:21]
 	Parameter DIM bound to: 3 - type: integer 
 	Parameter M bound to: 8 - type: integer 
@@ -54,11 +84,11 @@ INFO: [Synth 8-638] synthesizing module 'ROM' [/home/heinecantor/Desktop/git/ASD
 	Parameter M bound to: 8 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'ROM' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/ROM.vhd:22]
 INFO: [Synth 8-256] done synthesizing module 'A' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/A.vhd:21]
-INFO: [Synth 8-3491] module 'Rs232RefComp' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd:23' bound to instance 'UART_T' of component 'Rs232RefComp' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:109]
+INFO: [Synth 8-3491] module 'Rs232RefComp' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd:23' bound to instance 'UART_T' of component 'Rs232RefComp' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:104]
 INFO: [Synth 8-638] synthesizing module 'Rs232RefComp' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'Rs232RefComp' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd:40]
-INFO: [Synth 8-3491] module 'Rs232RefComp' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd:23' bound to instance 'UART_R' of component 'Rs232RefComp' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:126]
-INFO: [Synth 8-3491] module 'B' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/B.vhd:5' bound to instance 'COMP_B' of component 'B' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:144]
+INFO: [Synth 8-3491] module 'Rs232RefComp' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd:23' bound to instance 'UART_R' of component 'Rs232RefComp' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:121]
+INFO: [Synth 8-3491] module 'B' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/B.vhd:5' bound to instance 'COMP_B' of component 'B' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:139]
 INFO: [Synth 8-638] synthesizing module 'B' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/B.vhd:22]
 	Parameter M bound to: 8 - type: integer 
 	Parameter DIM bound to: 3 - type: integer 
@@ -78,41 +108,23 @@ INFO: [Synth 8-638] synthesizing module 'control_unit_B' [/home/heinecantor/Desk
 	Parameter DIM bound to: 3 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'control_unit_B' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/control_unit_B.vhd:22]
 INFO: [Synth 8-256] done synthesizing module 'B' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/B.vhd:22]
-INFO: [Synth 8-256] done synthesizing module 'UART_SYSTEM' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'UART_SYSTEM' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'BoardUnit' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd:15]
 WARNING: [Synth 8-3848] Net re in module/entity B does not have driver. [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/B.vhd:82]
-WARNING: [Synth 8-3848] Net EN_COUNT in module/entity UART_SYSTEM does not have driver. [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd:21]
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[7] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[6] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[5] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[4] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[3] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[2] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[1] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[0] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[7] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[6] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[5] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[4] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[3] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[2] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[1] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[0] driven by constant 0
 WARNING: [Synth 8-7129] Port rst in module ROM is either unconnected or has no load
-WARNING: [Synth 8-7129] Port EN_COUNT in module UART_SYSTEM is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2093.199 ; gain = 480.715 ; free physical = 223 ; free virtual = 6188
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2119.109 ; gain = 482.684 ; free physical = 1780 ; free virtual = 9661
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2108.043 ; gain = 495.559 ; free physical = 221 ; free virtual = 6186
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2130.984 ; gain = 494.559 ; free physical = 1777 ; free virtual = 9658
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2108.043 ; gain = 495.559 ; free physical = 221 ; free virtual = 6186
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2130.984 ; gain = 494.559 ; free physical = 1777 ; free virtual = 9658
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2108.043 ; gain = 0.000 ; free physical = 221 ; free virtual = 6186
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2130.984 ; gain = 0.000 ; free physical = 1777 ; free virtual = 9658
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -123,26 +135,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/BoardUnit_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2259.793 ; gain = 0.000 ; free physical = 200 ; free virtual = 6165
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2279.734 ; gain = 0.000 ; free physical = 1768 ; free virtual = 9649
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2259.828 ; gain = 0.000 ; free physical = 199 ; free virtual = 6164
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2279.770 ; gain = 0.000 ; free physical = 1768 ; free virtual = 9649
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 198 ; free virtual = 6164
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1768 ; free virtual = 9649
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 198 ; free virtual = 6164
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1768 ; free virtual = 9649
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 198 ; free virtual = 6164
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1768 ; free virtual = 9649
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'BTN_state_reg' in module 'ButtonDebouncer'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'control_unit_A'
@@ -206,7 +220,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'stbeCur_reg' using encodin
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'control_unit_B'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 195 ; free virtual = 6162
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1767 ; free virtual = 9649
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -214,26 +228,30 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   32 Bit       Adders := 2     
+	   2 Input   18 Bit       Adders := 1     
 	   2 Input    9 Bit       Adders := 2     
 	   2 Input    4 Bit       Adders := 8     
-	   2 Input    3 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 3     
 +---XORs : 
 	   8 Input      1 Bit         XORs := 2     
 	   9 Input      1 Bit         XORs := 2     
 +---Registers : 
 	               32 Bit    Registers := 2     
+	               18 Bit    Registers := 1     
 	               11 Bit    Registers := 2     
 	               10 Bit    Registers := 2     
 	                9 Bit    Registers := 2     
 	                8 Bit    Registers := 5     
 	                4 Bit    Registers := 8     
-	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 12    
+	                3 Bit    Registers := 3     
+	                1 Bit    Registers := 13    
 +---RAMs : 
 	               64 Bit	(8 X 8 bit)          RAMs := 1     
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   18 Bit        Muxes := 1     
 	   2 Input   11 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 1     
 	   9 Input    8 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 1     
@@ -262,22 +280,6 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-6014] Unused sequential element system/COMP_B/MEM_B/RAM_reg was removed. 
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[7] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[6] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[5] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[4] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[3] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[2] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[1] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port cathodes[0] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[7] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[6] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[5] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[4] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[3] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[2] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[1] driven by constant 0
-WARNING: [Synth 8-3917] design BoardUnit has port anodes[0] driven by constant 0
 WARNING: [Synth 8-3332] Sequential element (system/UART_T/FSM_sequential_strCur_reg[1]) is unused and will be removed from module BoardUnit.
 WARNING: [Synth 8-3332] Sequential element (system/UART_T/FSM_sequential_strCur_reg[0]) is unused and will be removed from module BoardUnit.
 WARNING: [Synth 8-3332] Sequential element (system/UART_R/FSM_onehot_sttCur_reg[2]) is unused and will be removed from module BoardUnit.
@@ -287,25 +289,25 @@ WARNING: [Synth 8-3332] Sequential element (system/UART_R/TBE_reg) is unused and
 WARNING: [Synth 8-3332] Sequential element (system/UART_R/FSM_sequential_stbeCur_reg[1]) is unused and will be removed from module BoardUnit.
 WARNING: [Synth 8-3332] Sequential element (system/UART_R/FSM_sequential_stbeCur_reg[0]) is unused and will be removed from module BoardUnit.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 172 ; free virtual = 6144
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1740 ; free virtual = 9626
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 166 ; free virtual = 6145
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9624
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 166 ; free virtual = 6145
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 166 ; free virtual = 6145
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -323,37 +325,51 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+-----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                    | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+-----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|BoardUnit   | system/UART_R/rdSReg_reg[7] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+-----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -370,45 +386,46 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    16|
-|3     |LUT1   |     8|
-|4     |LUT2   |    17|
-|5     |LUT3   |    17|
-|6     |LUT4   |    26|
-|7     |LUT5   |    19|
-|8     |LUT6   |    25|
-|9     |FDCE   |     2|
-|10    |FDRE   |   135|
-|11    |FDSE   |     1|
-|12    |LD     |     1|
-|13    |IBUF   |     4|
-|14    |OBUF   |    17|
+|2     |CARRY4 |    21|
+|3     |LUT1   |     9|
+|4     |LUT2   |    18|
+|5     |LUT3   |    19|
+|6     |LUT4   |    39|
+|7     |LUT5   |    39|
+|8     |LUT6   |    27|
+|9     |SRL16E |     1|
+|10    |FDCE   |     2|
+|11    |FDRE   |   173|
+|12    |FDSE   |     1|
+|13    |LD     |     1|
+|14    |IBUF   |     4|
+|15    |OBUF   |    17|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2259.828 ; gain = 495.559 ; free physical = 165 ; free virtual = 6144
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2259.828 ; gain = 647.344 ; free physical = 165 ; free virtual = 6144
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2279.770 ; gain = 494.559 ; free physical = 1737 ; free virtual = 9623
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2279.770 ; gain = 643.344 ; free physical = 1737 ; free virtual = 9623
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2259.828 ; gain = 0.000 ; free physical = 165 ; free virtual = 6144
-INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2279.770 ; gain = 0.000 ; free physical = 2021 ; free virtual = 9907
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2259.828 ; gain = 0.000 ; free physical = 441 ; free virtual = 6420
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2279.770 ; gain = 0.000 ; free physical = 2020 ; free virtual = 9907
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   LD => LDCE (inverted pins: G): 1 instance 
 
-Synth Design complete | Checksum: 37680b8c
+Synth Design complete | Checksum: d9a90b37
 INFO: [Common 17-83] Releasing license: Synthesis
-66 Infos, 47 Warnings, 0 Critical Warnings and 0 Errors encountered.
+90 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:39 . Memory (MB): peak = 2259.828 ; gain = 943.445 ; free physical = 441 ; free virtual = 6420
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1808.279; main = 1479.240; forked = 376.555
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3202.211; main = 2259.797; forked = 974.430
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2283.805 ; gain = 0.000 ; free physical = 440 ; free virtual = 6420
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 2279.770 ; gain = 958.352 ; free physical = 2020 ; free virtual = 9906
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1848.342; main = 1521.233; forked = 379.019
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3236.973; main = 2279.738; forked = 989.250
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2303.746 ; gain = 0.000 ; free physical = 2022 ; free virtual = 9909
 INFO: [Common 17-1381] The checkpoint '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.runs/synth_1/BoardUnit.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file BoardUnit_utilization_synth.rpt -pb BoardUnit_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 13:32:00 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 13 10:47:05 2024...

@@ -24,7 +24,7 @@ component counter is
 generic( DIM: integer :=3 );
     Port ( clock : in  STD_LOGIC;
            reset : in  STD_LOGIC;
-		   enable : in STD_LOGIC; --enable viene dal divisore di frequenza
+		   enable : in STD_LOGIC;
            counter : out  STD_LOGIC_VECTOR ((DIM-1) downto 0)); -- COUNTER corrisponde ad ADDRESS
 end component;
 

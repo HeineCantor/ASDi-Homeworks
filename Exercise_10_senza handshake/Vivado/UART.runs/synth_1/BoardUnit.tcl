@@ -70,10 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-36102-heinecantor-laptop/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -95,10 +93,15 @@ read_vhdl -library xil_defaultlib {
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/ROM.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/RS232RefComp.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/UART_SYSTEM.vhd}
+  {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/anodes_manager.vhd}
+  {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/cathodes_manager.vhd}
+  {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/clock_filter.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/control_unit_A.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/control_unit_B.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/counter_generic.vhd}
+  {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/counter_mod8.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/debouncer.vhd}
+  {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Display7Seg - Vivado/display_seven_segments.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/register_B.vhd}
   {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/BoardUnit.vhd}
 }
@@ -115,6 +118,8 @@ read_xdc {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handsh
 set_property used_in_implementation false [get_files {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Nexys-A7-100T-Master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_10_senza handshake/Vivado/UART.srcs/utils_1/imports/synth_1/BoardUnit.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -20,15 +20,10 @@ architecture Structural of BoardUnit is
             RESET: in STD_LOGIC;
             EN_WR, EN_RD: in STD_LOGIC;
         
-            DATA_IN: out STD_LOGIC_VECTOR(7 downto 0);
             DATA_OUT: out STD_LOGIC_VECTOR(7 downto 0);
             PE: out STD_LOGIC;
             FE: out STD_LOGIC;
-            OE: out STD_LOGIC;
-            
-            WR: out STD_LOGIC;
-            TY: out STD_LOGIC;
-            EN_COUNT: out STD_LOGIC
+            OE: out STD_LOGIC
         );
     end component;
     
@@ -44,10 +39,25 @@ architecture Structural of BoardUnit is
                CLEARED_BTN : out STD_LOGIC);
     end component;
     
+    component display_seven_segments is
+        Generic( 
+                    CLKIN_freq : integer := 100000000; 
+                    CLKOUT_freq : integer := 500
+                    );
+        Port ( CLK : in  STD_LOGIC;
+               RST : in  STD_LOGIC;
+               VALUE : in  STD_LOGIC_VECTOR (31 downto 0);
+               ENABLE : in  STD_LOGIC_VECTOR (7 downto 0);
+               DOTS : in  STD_LOGIC_VECTOR (7 downto 0);
+               ANODES : out  STD_LOGIC_VECTOR (7 downto 0);
+               CATHODES : out  STD_LOGIC_VECTOR (7 downto 0));
+    end component;
+    
     signal resetSignal, writeSignal, readSignal: std_logic;
     signal oeSignal: std_logic;
     
-    signal gndSignal: std_logic_vector(7 downto 0) := (others => '0');
+    signal currentDbOut: std_logic_vector(7 downto 0);
+    signal valueSignal: std_logic_vector(31 downto 0) := (others => '0');
     
 begin
 
@@ -67,6 +77,17 @@ begin
         cleared_btn => readSignal
     );
     
+    displayManager: display_seven_segments
+    port map(
+        clk => clock,
+        rst => resetSignal,
+        value => valueSignal,
+        enable => "00000011",
+        dots => (others => '0'),
+        anodes => anodes,
+        cathodes => cathodes
+    );
+    
     system: UART_SYSTEM
     port map(
         clk => clock,
@@ -74,20 +95,14 @@ begin
         en_wr => writeSignal,
         en_rd => readSignal,
         
-        data_in => open,
-        data_out => open,
+        data_out => currentDbOut,
         
         pe => open,
         fe => open,
-        oe => oeSignal,
-        
-        wr => open,
-        ty => open,
-        en_count => open
+        oe => oeSignal
     );
 
-    anodes <= gndSignal;
-    cathodes <= gndSignal;
+    valueSignal <= "000000000000000000000000" & currentDbOut;
 
     resetSignal <= btnReset;
     ledOE <= oeSignal;

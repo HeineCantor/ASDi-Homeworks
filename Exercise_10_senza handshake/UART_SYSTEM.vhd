@@ -10,15 +10,10 @@ port(
     RESET: in STD_LOGIC;
     EN_WR, EN_RD: in STD_LOGIC;
 
-    DATA_IN: out STD_LOGIC_VECTOR(7 downto 0);
     DATA_OUT: out STD_LOGIC_VECTOR(7 downto 0);
     PE: out STD_LOGIC;
     FE: out STD_LOGIC;
-    OE: out STD_LOGIC;
-    
-    WR: out STD_LOGIC;
-    TY: out STD_LOGIC;
-    EN_COUNT: out STD_LOGIC
+    OE: out STD_LOGIC
 );
 end UART_SYSTEM;
 
@@ -152,11 +147,6 @@ port map(
     DATA_OUT => d
 );
 
-DATA_IN <= int_data;
 DATA_OUT <= dbout;
---DIVISORE <= clk_d;
-WR <= int_wr;
-TY<=int_ty;
-
 
 end Behavioral;

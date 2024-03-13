@@ -10,7 +10,6 @@ architecture tb of tb_UART_SYSTEM is
     component UART_SYSTEM
         port (CLK      : in std_logic;
               RESET    : in std_logic;
-              START    : in std_logic;
               EN_WR, EN_RD: in STD_LOGIC;
               
               DATA_IN  : out std_logic_vector (7 downto 0);
@@ -54,7 +53,6 @@ begin
     dut : UART_SYSTEM
     port map (CLK      => clk_tb,
               RESET    => RESET,
-              START    => START,
               EN_WR => EN_WR,
               EN_RD => EN_RD,
               

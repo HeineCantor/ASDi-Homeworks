@@ -1,7 +1,7 @@
 -------------------------------------
-| Tool Version : Vivado v.2023.2.2
-| Date         : Tue Mar 12 13:32:54 2024
-| Host         : heinecantor-laptop
+| Tool Version : Vivado v.2023.2
+| Date         : Wed Mar 13 10:47:31 2024
+| Host         : heinecantor-desktop
 | Design       : design_1
 | Device       : xc7a100t-csg324-1--
 -------------------------------------
