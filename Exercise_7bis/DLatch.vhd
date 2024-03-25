@@ -11,7 +11,7 @@ entity DRisingEdge is
 end DRisingEdge;
 
 architecture Behavioral of DRisingEdge is
-    signal internalValue: std_logic;
+    signal internalValue: std_logic := '0';
 begin
 
     latchProcess: process(clock)

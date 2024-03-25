@@ -1,0 +1,10 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/home/heinecantor/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7/lib//server/libjvm.so(+0xd8797f) [0x7817f998797f]
+/home/heinecantor/Xilinx/Vivado/2023.2/tps/lnx64/jre17.0.7_7/lib//server/libjvm.so(JVM_handle_linux_signal+0x24e) [0x7817f998846e]
+/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x781837442520]
+/home/heinecantor/Xilinx/Vivado/2023.2/lib/lnx64.o/librdi_filemgmt.so(HADLEditorAssist::createFoldInfoIter(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x133) [0x78181da29e63]
+/home/heinecantor/Xilinx/Vivado/2023.2/lib/lnx64.o/librdi_filemgmt.so(Java_ui_data_srcscan_srcscani_EditorAssist_1createFoldInfoIter+0x162) [0x78181da41702]
+[0x7817eb0ef1f2]

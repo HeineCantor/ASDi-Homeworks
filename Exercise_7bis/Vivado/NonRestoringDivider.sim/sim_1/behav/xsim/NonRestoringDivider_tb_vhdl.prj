@@ -5,7 +5,7 @@ vhdl xil_defaultlib  \
 "../../../../../DLatch.vhd" \
 "../../../../../FlipFlop.vhd" \
 "../../../../../FullAdder.vhd" \
-"../../../../../Mux2to1.vhd" \
+"../../../../../Mux3to1.vhd" \
 "../../../../../NonRestoringDivider.vhd" \
 "../../../../../RippleCarryAdder.vhd" \
 "../../../../../UnitaControllo.vhd" \

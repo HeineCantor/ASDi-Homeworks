@@ -47,8 +47,8 @@ begin
     begin
         wait for 100ns;
         
-        D <= "1001";
-        V <= "0011";
+        D <= "1111";
+        V <= "1010";
         
         wait for 10ns;
         

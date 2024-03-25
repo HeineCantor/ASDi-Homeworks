@@ -1,4 +1,4 @@
-INPUT_BITS = 16
+INPUT_BITS = 4
 
 converter = ""
 
@@ -14,7 +14,7 @@ for i in range(2**INPUT_BITS):
     for digit in iString:
         tmpBCD += str.rjust("{0:b}".format(int(digit)), 4, '0')
     
-    tmpBCD = str.rjust(tmpBCD, 20, '0')
+    tmpBCD = str.rjust(tmpBCD, 8, '0')
     tmpBCD = sign + tmpBCD
     bcdString += tmpBCD
 

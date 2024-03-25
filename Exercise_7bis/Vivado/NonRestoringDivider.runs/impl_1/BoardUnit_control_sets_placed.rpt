@@ -1,0 +1,83 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Wed Mar 13 12:39:43 2024
+| Host         : heinecantor-desktop running 64-bit Ubuntu 22.04.3 LTS
+| Command      : report_control_sets -verbose -file BoardUnit_control_sets_placed.rpt
+| Design       : BoardUnit
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |     5 |
+|    Minimum number of control sets                        |     5 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    14 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |     5 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            2 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              37 |           15 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              43 |           15 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+---------------------------------------------------------------+--------------------------------------+------------------+----------------+--------------+
+|   Clock Signal   |                         Enable Signal                         |           Set/Reset Signal           | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+---------------------------------------------------------------+--------------------------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG |                                                               |                                      |                2 |              2 |         1.00 |
+|  clock_IBUF_BUFG | dividerSystem/controlUnit/FSM_onehot_currentState_reg[9]_0[0] | btnReset_IBUF                        |                2 |              4 |         2.00 |
+|  clock_IBUF_BUFG | dividerSystem/controlUnit/E[0]                                | btnReset_IBUF                        |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | debouncerStart/deb.count[31]_i_2_n_0                          | debouncerStart/deb.count[31]_i_1_n_0 |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG |                                                               | btnReset_IBUF                        |               15 |             37 |         2.47 |
++------------------+---------------------------------------------------------------+--------------------------------------+------------------+----------------+--------------+
+
+

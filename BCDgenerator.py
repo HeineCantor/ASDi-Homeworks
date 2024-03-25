@@ -1,4 +1,4 @@
-INPUT_BITS = 6
+INPUT_BITS = 4
 
 converter = ""
 

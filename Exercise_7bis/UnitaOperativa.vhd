@@ -33,7 +33,7 @@ architecture structural of UnitaOperativa is
     
     component AdderSubtractor is
         generic(
-            length: integer := 4
+            length: integer := 5
         );
         port(
             X, Y:   in std_logic_vector(length-1 downto 0);
@@ -88,11 +88,12 @@ architecture structural of UnitaOperativa is
     signal parallelOutAQ:         std_logic_vector(7 downto 0);
     
     signal adderOperand1, adderOperand2: std_logic_vector(3 downto 0);
-    signal sumOutput:                    std_logic_vector(3 downto 0);
+    signal fullOperand1, fullOperand2: std_logic_vector(4 downto 0);
+    signal sumOutput:                    std_logic_vector(4 downto 0);
     
     signal riporto: std_logic; 
     
-    signal sign: std_logic;
+    signal sign: std_logic := '0';
     signal q0settingAQ, sumSettingAQ: std_logic_vector(7 downto 0);
 begin
 
@@ -117,7 +118,7 @@ begin
     
     registerS: DRisingEdge
     port map(
-        dataIn => parallelOutAQ(7),
+        dataIn => sumOutput(4),
         clock => clock,
         load => loadS,
         dataOut => sign
@@ -145,17 +146,20 @@ begin
     
     addSub: AdderSubtractor
     port map(
-        X => adderOperand1,
-        Y => adderOperand2,
+        X => fullOperand1,
+        Y => fullOperand2,
         Z => sumOutput,
         cIn => subSignal,
         cOut => riporto
     );
     
+    fullOperand1 <= sign & adderOperand1;
+    fullOperand2 <= "0" & adderOperand2;
+    
     adderOperand1 <= parallelOutAQ(7 downto 4);
     
     q0settingAQ <= parallelOutAQ(7 downto 1) & (not sign);
-    sumSettingAQ <= sumOutput & parallelOutAQ(3 downto 0);
+    sumSettingAQ <= sumOutput(3 downto 0) & parallelOutAQ(3 downto 0);
     
     sOutput <= sign;
     

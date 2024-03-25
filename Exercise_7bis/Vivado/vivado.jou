@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Mar 13 10:54:27 2024
+# Process ID: 150016
+# Current directory: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado
+# Command line: vivado /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/NonRestoringDivider.xpr
+# Log file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/vivado.log
+# Journal file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/vivado.jou
+# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 3707.392 MHz, CPU Physical cores: 16, Host memory: 14528 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/NonRestoringDivider.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source NonRestoringDivider_tb.tcl
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+set_property is_enabled false [get_files  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/NonRestoringDivider_tb.vhd]
+close [ open /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/BoardUnit.vhd w ]
+add_files /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/BoardUnit.vhd
+update_compile_order -fileset sources_1
+add_files {{/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Display7Seg - Vivado/clock_filter.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Display7Seg - Vivado/display_seven_segments.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Display7Seg - Vivado/cathodes_manager.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Display7Seg - Vivado/counter_mod8.vhd} {/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Display7Seg - Vivado/anodes_manager.vhd}}
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Nexys-A7-100T-Master.xdc
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_files -from_files /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Mux3to1.vhd -to_files /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Mux2to1.vhd -filesets [get_filesets *]
+add_files -norecurse /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Mux2to1.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/debouncer.vhd
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1

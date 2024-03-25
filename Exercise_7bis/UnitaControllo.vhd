@@ -114,9 +114,7 @@ begin
             WHEN endState =>
                 divisionFinished <= '1';
                 
-                nextState <= idle;
-                
-                        
+                nextState <= endState;   
         END CASE;
     
     end process;
