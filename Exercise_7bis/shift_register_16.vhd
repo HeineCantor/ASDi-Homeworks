@@ -1,18 +1,21 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity ShiftRegister8 is
+entity ShiftRegister is
+    generic(
+        length : natural := 8
+    );
     port(
-        parallelIn:                in std_logic_vector(7 downto 0);
+        parallelIn:                in std_logic_vector((length-1) downto 0);
         clock, shift, reset, load:  in std_logic;
         serialIn:                   in std_logic;
-        parallelOut:               out std_logic_vector(7 downto 0)
+        parallelOut:               out std_logic_vector((length-1) downto 0)
     );
-end ShiftRegister8;
+end ShiftRegister;
 
-architecture Behavioral of ShiftRegister8 is
+architecture Behavioral of ShiftRegister is
 
-    signal internalValue:   std_logic_vector(7 downto 0);
+    signal internalValue:   std_logic_vector((length-1) downto 0);
 
 begin
 
@@ -25,7 +28,7 @@ begin
                 if (load = '1') then
                     internalValue <= parallelIn;
                 elsif (shift = '1') then
-                    internalValue(7 downto 1) <= internalValue(6 downto 0);
+                    internalValue((length-1) downto 1) <= internalValue((length-2) downto 0);
                     internalValue(0) <= serialIn;
                 end if;
             end if;

@@ -22,12 +22,15 @@ end UnitaOperativa;
 
 architecture structural of UnitaOperativa is
 
-    component ShiftRegister8 is
+    component ShiftRegister is
+        generic(
+            length : natural := 8
+        );
         port(
-            parallelIn:                in std_logic_vector(7 downto 0);
+            parallelIn:                in std_logic_vector((length-1) downto 0);
             clock, shift, reset, load:  in std_logic;
             serialIn:                   in std_logic;
-            parallelOut:               out std_logic_vector(7 downto 0)
+            parallelOut:               out std_logic_vector((length-1) downto 0)
         );
     end component;
     
@@ -84,20 +87,20 @@ architecture structural of UnitaOperativa is
         );
     end component;
 
-    signal initAQ, parallelInAQ : std_logic_vector(7 downto 0);
-    signal parallelOutAQ:         std_logic_vector(7 downto 0);
+    signal initAQ, parallelInAQ : std_logic_vector(8 downto 0);
+    signal parallelOutAQ:         std_logic_vector(8 downto 0);
     
     signal adderOperand1, adderOperand2: std_logic_vector(3 downto 0);
-    signal fullOperand1, fullOperand2: std_logic_vector(4 downto 0);
+    signal fullOperand1, fullOperand2:   std_logic_vector(4 downto 0);
     signal sumOutput:                    std_logic_vector(4 downto 0);
     
     signal riporto: std_logic; 
     
     signal sign: std_logic := '0';
-    signal q0settingAQ, sumSettingAQ: std_logic_vector(7 downto 0);
+    signal q0settingAQ, sumSettingAQ: std_logic_vector(8 downto 0);
 begin
 
-    initAQ <= "0000" & D;
+    initAQ <= "00000" & D;
     
     counter: CounterMod4
     port map(
@@ -116,15 +119,10 @@ begin
         dataOut => adderOperand2
     );
     
-    registerS: DRisingEdge
-    port map(
-        dataIn => sumOutput(4),
-        clock => clock,
-        load => loadS,
-        dataOut => sign
-    );
-    
-    shiftRegisterAQ: ShiftRegister8
+    shiftRegisterAQ: ShiftRegister
+    generic map(
+        length => 9
+    )
     port map(
         parallelIn => parallelInAQ,
         clock => clock,
@@ -136,6 +134,9 @@ begin
     );
     
     muxAQ: Mux3to1
+    generic map(
+        width => 9
+    )
     port map(
         a => initAQ,
         b => sumSettingAQ,
@@ -145,6 +146,9 @@ begin
     );
     
     addSub: AdderSubtractor
+    generic map(
+        length => 5
+    )
     port map(
         X => fullOperand1,
         Y => fullOperand2,
@@ -153,13 +157,13 @@ begin
         cOut => riporto
     );
     
-    fullOperand1 <= sign & adderOperand1;
+    sign <= parallelOutAQ(8);
+    
+    fullOperand1 <= parallelOutAQ(8 downto 4);
     fullOperand2 <= "0" & adderOperand2;
     
-    adderOperand1 <= parallelOutAQ(7 downto 4);
-    
-    q0settingAQ <= parallelOutAQ(7 downto 1) & (not sign);
-    sumSettingAQ <= sumOutput(3 downto 0) & parallelOutAQ(3 downto 0);
+    q0settingAQ <= parallelOutAQ(8 downto 1) & (not sign);
+    sumSettingAQ <= sumOutput & parallelOutAQ(3 downto 0);
     
     sOutput <= sign;
     

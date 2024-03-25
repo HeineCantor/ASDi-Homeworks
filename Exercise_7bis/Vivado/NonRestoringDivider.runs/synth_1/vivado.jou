@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Mar 13 12:38:54 2024
-# Process ID: 193298
+# Start of session at: Mon Mar 25 18:14:21 2024
+# Process ID: 39216
 # Current directory: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/NonRestoringDivider.runs/synth_1
 # Command line: vivado -log BoardUnit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BoardUnit.tcl
 # Log file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/NonRestoringDivider.runs/synth_1/BoardUnit.vds
 # Journal file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/Vivado/NonRestoringDivider.runs/synth_1/vivado.jou
-# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 3682.974 MHz, CPU Physical cores: 16, Host memory: 14528 MB
+# Running On: heinecantor-desktop, OS: Linux, CPU Frequency: 3693.743 MHz, CPU Physical cores: 16, Host memory: 14528 MB
 #-----------------------------------------------------------
 source BoardUnit.tcl -notrace

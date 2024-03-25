@@ -2,7 +2,6 @@
 vhdl xil_defaultlib  \
 "../../../../../AdderSubtractor.vhd" \
 "../../../../../CounterMod4.vhd" \
-"../../../../../DLatch.vhd" \
 "../../../../../FlipFlop.vhd" \
 "../../../../../FullAdder.vhd" \
 "../../../../../Mux3to1.vhd" \

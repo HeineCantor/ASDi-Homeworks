@@ -73,7 +73,7 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-170503-heinecantor-desktop/incrSyn
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-5376-heinecantor-desktop/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -94,7 +94,6 @@ OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/AdderSubtractor.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/CounterMod4.vhd
-  /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/DLatch.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/EncoderBCD.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/FlipFlop.vhd
   /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_7bis/FullAdder.vhd

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1710329932" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/UnitaOperativa.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1711386859" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/UnitaOperativa.dcp">
+  <File Type="VDS-TIMING-PB" Name="BoardUnit_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="BoardUnit_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="BoardUnit.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="BoardUnit_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="BoardUnit_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="BoardUnit_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="BoardUnit.vds"/>
   <File Type="REPORTS-TCL" Name="BoardUnit_reports.tcl"/>
   <File Type="PA-TCL" Name="BoardUnit.tcl"/>
-  <File Type="RDS-DCP" Name="BoardUnit.dcp"/>
-  <File Type="RDS-UTIL" Name="BoardUnit_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="BoardUnit_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../AdderSubtractor.vhd">
@@ -15,12 +18,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../CounterMod4.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../DLatch.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -128,14 +125,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../UnitaOperativa_tb.vhd">
+    <File Path="$PPRDIR/../NonRestoringDivider_tb.vhd">
       <FileInfo>
         <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../NonRestoringDivider_tb.vhd">
+    <File Path="$PPRDIR/../DLatch.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../UnitaOperativa_tb.vhd">
       <FileInfo>
         <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
