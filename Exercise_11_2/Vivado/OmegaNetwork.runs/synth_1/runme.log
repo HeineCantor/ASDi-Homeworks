@@ -1,0 +1,232 @@
+
+*** Running vivado
+    with args -log tb_omega_network.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_omega_network.tcl
+
+
+****** Vivado v2023.2.2 (64-bit)
+  **** SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
+  **** IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+  **** SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source tb_omega_network.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1316.379 ; gain = 0.023 ; free physical = 1237 ; free virtual = 7188
+Command: synth_design -top tb_omega_network -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 50414
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1706.156 ; gain = 389.777 ; free physical = 591 ; free virtual = 6543
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'tb_omega_network' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network_tb.vhd:7]
+INFO: [Synth 8-3491] module 'omega_network' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:4' bound to instance 'dut' of component 'omega_network' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network_tb.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'omega_network' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:15]
+	Parameter addressDim bound to: 3 - type: integer 
+	Parameter dataDim bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch00' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:19]
+	Parameter addressDim bound to: 3 - type: integer 
+	Parameter dataDim bound to: 2 - type: integer 
+	Parameter depth bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'switchControlUnit' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switchControlUnit.vhd:4' bound to instance 'controlUnit' of component 'switchControlUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:39]
+INFO: [Synth 8-638] synthesizing module 'switchControlUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switchControlUnit.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'switchControlUnit' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switchControlUnit.vhd:11]
+INFO: [Synth 8-3491] module 'mux_2_1' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:5' bound to instance 'mux1' of component 'mux_2_1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'mux_2_1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'mux_2_1' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:16]
+INFO: [Synth 8-3491] module 'mux_2_1' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:5' bound to instance 'mux2' of component 'mux_2_1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'switch' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:19]
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch01' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:46]
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch02' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:54]
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch03' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:62]
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch10' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'switch__parameterized2' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:19]
+	Parameter addressDim bound to: 3 - type: integer 
+	Parameter dataDim bound to: 2 - type: integer 
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'switchControlUnit' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switchControlUnit.vhd:4' bound to instance 'controlUnit' of component 'switchControlUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:39]
+INFO: [Synth 8-3491] module 'mux_2_1' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:5' bound to instance 'mux1' of component 'mux_2_1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:47]
+INFO: [Synth 8-3491] module 'mux_2_1' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:5' bound to instance 'mux2' of component 'mux_2_1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'switch__parameterized2' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:19]
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch11' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:81]
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch12' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:92]
+	Parameter depth bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch13' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:103]
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch20' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'switch__parameterized4' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:19]
+	Parameter addressDim bound to: 3 - type: integer 
+	Parameter dataDim bound to: 2 - type: integer 
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'switchControlUnit' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switchControlUnit.vhd:4' bound to instance 'controlUnit' of component 'switchControlUnit' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:39]
+INFO: [Synth 8-3491] module 'mux_2_1' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:5' bound to instance 'mux1' of component 'mux_2_1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:47]
+INFO: [Synth 8-3491] module 'mux_2_1' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/mux_2_1.vhd:5' bound to instance 'mux2' of component 'mux_2_1' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'switch__parameterized4' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:19]
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch21' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:125]
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch22' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:136]
+	Parameter depth bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'switch' declared at '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/switch.vhd:5' bound to instance 'switch23' of component 'switch' [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:147]
+INFO: [Synth 8-256] done synthesizing module 'omega_network' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network.vhd:15]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network_tb.vhd:48]
+WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network_tb.vhd:59]
+INFO: [Synth 8-256] done synthesizing module 'tb_omega_network' (0#1) [/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/omega_network_tb.vhd:7]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1781.094 ; gain = 464.715 ; free physical = 487 ; free virtual = 6439
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1798.906 ; gain = 482.527 ; free physical = 493 ; free virtual = 6445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1806.910 ; gain = 490.531 ; free physical = 492 ; free virtual = 6444
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1815.816 ; gain = 499.438 ; free physical = 473 ; free virtual = 6426
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input    5 Bit        Muxes := 24    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 351 ; free virtual = 6306
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 357 ; free virtual = 6313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 350 ; free virtual = 6306
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6304
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6304
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6304
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6304
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.129 ; gain = 627.750 ; free physical = 349 ; free virtual = 6304
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1944.137 ; gain = 627.750 ; free physical = 349 ; free virtual = 6304
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1944.137 ; gain = 0.000 ; free physical = 342 ; free virtual = 6298
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2036.691 ; gain = 0.000 ; free physical = 532 ; free virtual = 6489
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 989c22d3
+INFO: [Common 17-83] Releasing license: Synthesis
+46 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 2036.727 ; gain = 720.348 ; free physical = 528 ; free virtual = 6484
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1509.432; main = 1358.555; forked = 363.582
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 2823.152; main = 2036.695; forked = 961.551
+INFO: [Common 17-1381] The checkpoint '/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/Vivado/OmegaNetwork.runs/synth_1/tb_omega_network.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file tb_omega_network_utilization_synth.rpt -pb tb_omega_network_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 26 13:37:00 2024...

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2.2 (64-bit)
+# SW Build 4126759 on Thu Feb  8 23:52:05 MST 2024
+# IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+# SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+# Start of session at: Tue Mar 26 13:36:28 2024
+# Process ID: 50385
+# Current directory: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/Vivado/OmegaNetwork.runs/synth_1
+# Command line: vivado -log tb_omega_network.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_omega_network.tcl
+# Log file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/Vivado/OmegaNetwork.runs/synth_1/tb_omega_network.vds
+# Journal file: /home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_2/Vivado/OmegaNetwork.runs/synth_1/vivado.jou
+# Running On: heinecantor-laptop, OS: Linux, CPU Frequency: 1625.716 MHz, CPU Physical cores: 8, Host memory: 10285 MB
+#-----------------------------------------------------------
+source tb_omega_network.tcl -notrace
