@@ -1,0 +1,12 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'control_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11/demux_1_2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'demux_1_2'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11/mux_2_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_2_1'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11/omega_network.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'omega_network'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11/switch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'switch'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11/omega_network_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_omega_network'

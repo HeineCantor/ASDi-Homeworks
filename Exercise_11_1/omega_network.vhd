@@ -37,10 +37,7 @@ component control_unit is
 end component;
 
 
-signal u1: STD_LOGIC_VECTOR((DIM-1) downto 0);
-signal u2: STD_LOGIC_VECTOR((DIM-1) downto 0);
-signal u3: STD_LOGIC_VECTOR((DIM-1) downto 0);
-signal u4: STD_LOGIC_VECTOR((DIM-1) downto 0);
+signal u1, u2, u3, u4: STD_LOGIC_VECTOR((DIM-1) downto 0);
 
 signal internal_src: STD_LOGIC_VECTOR(1 downto 0);
 signal dstAddress: STD_LOGIC_VECTOR(1 downto 0);
