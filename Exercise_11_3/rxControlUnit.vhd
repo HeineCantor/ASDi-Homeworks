@@ -1,43 +1,53 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 03/27/2024 11:40:54 AM
--- Design Name: 
--- Module Name: rxControlUnit - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity rxControlUnit is
---  Port ( );
+    port(
+        clock, reset: in std_logic;
+        txReq: in std_logic;
+        
+        rxAck: out std_logic
+    );
 end rxControlUnit;
 
 architecture Behavioral of rxControlUnit is
 
+    type state is (idle, waitForReqLow);
+    signal currentState, nextState: state;
+
 begin
 
+    updateState: process(clock)
+    begin
+        if (clock'event and clock='1') then
+            if (reset = '1') then
+                currentState <= idle;
+            else
+                currentState <= nextState;
+            end if;
+        end if;
+    end process;
+    
+    automa: process(currentState, txReq)
+    begin
+        rxAck <= '0';
+        
+        case currentState is
+            when idle =>
+                if (txReq = '1') then
+                    nextState <= waitForReqLow;
+                else
+                    nextState <= idle;
+                end if;
+            when waitForReqLow =>
+                rxAck <= '1';
+                
+                if (txReq = '0') then
+                    nextState <= idle;
+                else
+                    nextState <= waitForReqLow;
+                end if;   
+        end case;
+    end process;
 
 end Behavioral;

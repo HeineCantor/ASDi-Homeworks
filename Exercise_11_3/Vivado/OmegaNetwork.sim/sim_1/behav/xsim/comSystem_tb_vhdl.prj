@@ -1,0 +1,18 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../comSystem.vhd" \
+"../../../../../control_unit.vhd" \
+"../../../../../demux_1_2.vhd" \
+"../../../../../mux_2_1.vhd" \
+"../../../../../nodeRX.vhd" \
+"../../../../../nodeTX.vhd" \
+"../../../../../omega_network.vhd" \
+"../../../../../rxControlUnit.vhd" \
+"../../../../../simpleInterconnection.vhd" \
+"../../../../../switch.vhd" \
+"../../../../../systemControlUnit.vhd" \
+"../../../../../txControlUnit.vhd" \
+"../../../../../comSystem_tb.vhd" \
+
+# Do not sort compile order
+nosort

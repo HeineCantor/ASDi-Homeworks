@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_3/simpleInterconnection.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'simpleInterconnection4to4'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/heinecantor/Desktop/git/ASDi-Homeworks/Exercise_11_3/simpleInterconnection_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'simpleInterconnection_tb'

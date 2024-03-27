@@ -35,11 +35,9 @@ begin
     
     automa: process(currentState, enableArray, transmissionComplete)
     begin
-        startHandshakingArray <= "0000";
-    
         case currentState is
             when idleState =>
-                if (enableArray = "0000") then
+                if (enableArray(0) /= '1' and enableArray(1) /= '1' and enableArray(2) /= '1' and enableArray(3) /= '1') then
                     nextState <= idleState;
                 else
                     nextState <= setupInterconnection;
@@ -83,6 +81,7 @@ begin
                 
             when disableChannel =>
                 enableOmegaInput <= "0000";
+                currentTransmitter <= "0000";
                 if (enableArray = "0000") then
                     nextState <= idleState;
                 else

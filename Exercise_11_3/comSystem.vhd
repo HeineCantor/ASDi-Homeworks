@@ -16,13 +16,13 @@ architecture structural of comSystem is
 
     component nodeTX is
         port(
-            clock: in std_logic;
-            startTransmit, startHandshake: in std_logic;
+            clock, reset: in std_logic;
+            startTransmit: in std_logic;
             inputData: in std_logic_vector(1 downto 0);
             readyToReceive: in std_logic;
             address: in std_logic_vector(1 downto 0);
             
-            requestForTransmit, readyToTransmit, transmitCompleted: out std_logic;
+            readyToTransmit, transmitCompleted: out std_logic;
             outputFrame: out std_logic_vector(3 downto 0)
         );
     end component;
@@ -32,7 +32,7 @@ architecture structural of comSystem is
             address: std_logic_vector(1 downto 0) := "00"
         );
         port(
-            clock: in std_logic;
+            clock, reset: in std_logic;
             inputData: in std_logic_vector(1 downto 0);
             readyToTransmit: in std_logic;
             
@@ -42,13 +42,10 @@ architecture structural of comSystem is
     end component;
     
     component simpleInterconnection4to4 is
-        generic(
-            dataWidth : natural := 2
-        );
         port(
-            input0, input1, input2, input3: in std_logic_vector(dataWidth-1 downto 0);
+            inputArray: in std_logic_vector(3 downto 0);
             selectorTx, selectorRx: in std_logic_vector(1 downto 0);
-            output0, output1, output2, output3: out std_logic_vector(dataWidth-1 downto 0)
+            outputArray: out std_logic_vector(3 downto 0)
         );
     end component;
     
@@ -73,11 +70,8 @@ architecture structural of comSystem is
         );
     end component;
 
-    signal readyToReceiveLinkTX, readyToTransmitLinkTX: std_logic_vector(3 downto 0);
-    signal txCouple0, txCouple1, txCouple2, txCouple3: std_logic_vector(1 downto 0);
-    
-    signal readyToReceiveLinkRX, readyToTransmitLinkRX: std_logic_vector(3 downto 0);
-    signal rxCouple0, rxCouple1, rxCouple2, rxCouple3: std_logic_vector(1 downto 0);
+
+    signal txReqArray, txAckArray, rxReqArray, rxAckArray: std_logic_vector(3 downto 0);
     
     signal omegaOut0, omegaOut1, omegaOut2, omegaOut3: std_logic_vector(1 downto 0);
     
@@ -111,14 +105,13 @@ begin
     nodeTx0: nodeTX
     port map(
         clock => clock,
-        startTransmit => enable0,
-        startHandshake => startHandshakingArray(3),
+        reset => reset,
+        startTransmit => startHandshakingArray(3),
         inputData => inData0,
-        readyToReceive => readyToReceiveLinkTX(3),
+        readyToReceive => txAckArray(3),
         address => address0,
         
-        requestForTransmit => enableArray(3),
-        readyToTransmit => readyToTransmitLinkTX(3),
+        readyToTransmit => txReqArray(3),
         transmitCompleted => transmitComplete0,
         outputFrame => frame0
     );
@@ -126,14 +119,13 @@ begin
     nodeTx1: nodeTX
     port map(
         clock => clock,
-        startTransmit => enable1,
-        startHandshake => startHandshakingArray(2),
+        reset => reset,
+        startTransmit => startHandshakingArray(2),
         inputData => inData1,
-        readyToReceive => readyToReceiveLinkTX(2),
+        readyToReceive => txAckArray(2),
         address => address1,
         
-        requestForTransmit => enableArray(2),
-        readyToTransmit => readyToTransmitLinkTX(2),
+        readyToTransmit => txReqArray(2),
         transmitCompleted => transmitComplete1,
         outputFrame => frame1
     );
@@ -141,14 +133,13 @@ begin
     nodeTx2: nodeTX
     port map(
         clock => clock,
-        startTransmit => enable2,
-        startHandshake => startHandshakingArray(1),
+        reset => reset,
+        startTransmit => startHandshakingArray(1),
         inputData => inData2,
-        readyToReceive => readyToReceiveLinkTX(1),
+        readyToReceive => txAckArray(1),
         address => address2,
         
-        requestForTransmit => enableArray(1),
-        readyToTransmit => readyToTransmitLinkTX(1),
+        readyToTransmit => txReqArray(1),
         transmitCompleted => transmitComplete2,
         outputFrame => frame2
     );
@@ -156,14 +147,13 @@ begin
     nodeTx3: nodeTX
     port map(
         clock => clock,
-        startTransmit => enable3,
-        startHandshake => startHandshakingArray(0),
+        reset => reset,
+        startTransmit => startHandshakingArray(0),
         inputData => inData3,
-        readyToReceive => readyToReceiveLinkTX(0),
+        readyToReceive => txAckArray(0),
         address => address3,
         
-        requestForTransmit => enableArray(0),
-        readyToTransmit => readyToTransmitLinkTX(0),
+        readyToTransmit => txReqArray(0),
         transmitCompleted => transmitComplete3,
         outputFrame => frame3
     );
@@ -171,65 +161,61 @@ begin
     nodeRx0: nodeRX
     port map(
         clock => clock,
+        reset => reset,
         inputData => omegaOut0,
-        readyToTransmit => readyToTransmitLinkRX(3),
+        readyToTransmit => rxReqArray(3),
         
-        readyToReceive => readyToReceiveLinkRX(3),
+        readyToReceive => rxAckArray(3),
         outputData => outData0
     );
     
     nodeRx1: nodeRX
     port map(
         clock => clock,
+        reset => reset,
         inputData => omegaOut1,
-        readyToTransmit => readyToTransmitLinkRX(2),
+        readyToTransmit => rxReqArray(2),
         
-        readyToReceive => readyToReceiveLinkRX(2),
+        readyToReceive => rxAckArray(2),
         outputData => outData1
     );
     
     nodeRx2: nodeRX
     port map(
         clock => clock,
+        reset => reset,
         inputData => omegaOut2,
-        readyToTransmit => readyToTransmitLinkRX(1),
+        readyToTransmit => rxReqArray(1),
         
-        readyToReceive => readyToReceiveLinkRX(1),
+        readyToReceive => rxAckArray(1),
         outputData => outData2
     );
     
     nodeRx3: nodeRX
     port map(
         clock => clock,
+        reset => reset,
         inputData => omegaOut3,
-        readyToTransmit => readyToTransmitLinkRX(0),
+        readyToTransmit => rxReqArray(0),
         
-        readyToReceive => readyToReceiveLinkRX(0),
+        readyToReceive => rxAckArray(0),
         outputData => outData3
     );
     
-    txCouple0 <= readyToTransmitLinkTX(3) & readyToReceiveLinkTX(3);
-    txCouple1 <= readyToTransmitLinkTX(2) & readyToReceiveLinkTX(2);
-    txCouple2 <= readyToTransmitLinkTX(1) & readyToReceiveLinkTX(1);
-    txCouple3 <= readyToTransmitLinkTX(0) & readyToReceiveLinkTX(0);
-    
-    rxCouple0 <= readyToTransmitLinkRX(3) & readyToReceiveLinkRX(3);
-    rxCouple1 <= readyToTransmitLinkRX(2) & readyToReceiveLinkRX(2);
-    rxCouple2 <= readyToTransmitLinkRX(1) & readyToReceiveLinkRX(1);
-    rxCouple3 <= readyToTransmitLinkRX(0) & readyToReceiveLinkRX(0);
-    
-    handshakeInterconnection: simpleInterconnection4to4
+    reqInterconnection: simpleInterconnection4to4
     port map(
-        input0 => txCouple0,
-        input1 => txCouple1,
-        input2 => txCouple2,
-        input3 => txCouple3,
+        inputArray => txReqArray,
         selectorTx => txSelector,
         selectorRx => rxSelector,
-        output0 => rxCouple0,
-        output1 => rxCouple1,
-        output2 => rxCouple2,
-        output3 => rxCouple3
+        outputArray => rxReqArray
+    );
+    
+    ackInterconnection: simpleInterconnection4to4
+    port map(
+        inputArray => rxAckArray,
+        selectorTx => rxSelector,
+        selectorRx => txSelector,
+        outputArray => txAckArray
     );
 
     dataOmegaNetwork: omega_network
@@ -250,6 +236,7 @@ begin
         out4 => omegaOut3
     );
 
+    enableArray <= enable0 & enable1 & enable2 & enable3;
     transmissionCompleteSignal <= transmitComplete0 and transmitComplete1 and transmitComplete2 and transmitComplete3; 
 
 end structural;
