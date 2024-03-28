@@ -237,6 +237,6 @@ begin
     );
 
     enableArray <= enable0 & enable1 & enable2 & enable3;
-    transmissionCompleteSignal <= transmitComplete0 and transmitComplete1 and transmitComplete2 and transmitComplete3; 
+    transmissionCompleteSignal <= transmitComplete0 or transmitComplete1 or transmitComplete2 or transmitComplete3; 
 
 end structural;

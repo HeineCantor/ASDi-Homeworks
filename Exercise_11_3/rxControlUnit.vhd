@@ -6,13 +6,13 @@ entity rxControlUnit is
         clock, reset: in std_logic;
         txReq: in std_logic;
         
-        rxAck: out std_logic
+        rxAck, loadData: out std_logic
     );
 end rxControlUnit;
 
 architecture Behavioral of rxControlUnit is
 
-    type state is (idle, waitForReqLow);
+    type state is (idle, dataLoading, waitForReqLow);
     signal currentState, nextState: state;
 
 begin
@@ -31,14 +31,18 @@ begin
     automa: process(currentState, txReq)
     begin
         rxAck <= '0';
+        loadData <= '0';
         
         case currentState is
             when idle =>
                 if (txReq = '1') then
-                    nextState <= waitForReqLow;
+                    nextState <= dataLoading;
                 else
                     nextState <= idle;
                 end if;
+            when dataLoading =>
+                loadData <= '1';
+                nextState <= waitForReqLow;         
             when waitForReqLow =>
                 rxAck <= '1';
                 

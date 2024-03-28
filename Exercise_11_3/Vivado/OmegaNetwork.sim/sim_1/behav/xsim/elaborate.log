@@ -5,4 +5,23 @@ Running: /home/heinecantor/Xilinx/Vivado/2023.2/bin/unwrapped/lnx64.o/xelab --in
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling architecture behavioral of entity xil_defaultlib.systemControlUnit [systemcontrolunit_default]
+Compiling architecture behavioral of entity xil_defaultlib.txControlUnit [txcontrolunit_default]
+Compiling architecture structural of entity xil_defaultlib.nodeTX [nodetx_default]
+Compiling architecture behavioral of entity xil_defaultlib.rxControlUnit [rxcontrolunit_default]
+Compiling architecture structural of entity xil_defaultlib.nodeRX [noderx_default]
+Compiling architecture behavioral of entity xil_defaultlib.simpleInterconnection4to4 [simpleinterconnection4to4_defaul...]
+Compiling architecture dataflow of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture dataflow of entity xil_defaultlib.mux_2_1 [mux_2_1_default]
+Compiling architecture dataflow of entity xil_defaultlib.demux_1_2 [demux_1_2_default]
+Compiling architecture structural of entity xil_defaultlib.switch [switch_default]
+Compiling architecture structural of entity xil_defaultlib.omega_network [omega_network_default]
+Compiling architecture structural of entity xil_defaultlib.comSystem [comsystem_default]
+Compiling architecture structural of entity xil_defaultlib.comsystem_tb
+Built simulation snapshot comSystem_tb_behav

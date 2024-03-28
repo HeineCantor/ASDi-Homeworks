@@ -81,6 +81,7 @@ begin
                 
             when disableChannel =>
                 enableOmegaInput <= "0000";
+                startHandshakingArray <= "0000";
                 currentTransmitter <= "0000";
                 if (enableArray = "0000") then
                     nextState <= idleState;

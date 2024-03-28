@@ -80,15 +80,38 @@ begin
         inData2 <= "01";
         inData3 <= "11";
         
-        address0 <= "11";
-        address1 <= "11";
+        address0 <= "10";
+        address1 <= "00";
         address2 <= "11";
-        address3 <= "11";
+        address3 <= "01";
         
-        enable0 <= '0';
+        enable0 <= '1';
         enable1 <= '0';
         enable2 <= '1';
         enable3 <= '0';
+        
+        wait for 30 ns;
+        
+        enable0 <= '0';
+        
+        wait for 150 ns;
+        
+        enable2 <= '0';
+        
+        wait for 150 ns;
+        
+        enable1 <= '1';
+        enable3 <= '1';
+        
+        wait for 50ns;
+        
+        enable1 <= '0';
+        
+        wait for 150ns;
+        
+        enable3 <= '0';
+        
+        wait;
         
     end process;
 

@@ -22,9 +22,12 @@ architecture structural of nodeRX is
             clock, reset: in std_logic;
             txReq: in std_logic;
             
-            rxAck: out std_logic
+            rxAck, loadData: out std_logic
         );
     end component;
+    
+    signal loadInternalData: std_logic;
+    signal internalData: std_logic_vector(1 downto 0);
 
 begin
 
@@ -34,9 +37,23 @@ begin
         reset => reset,
         txReq => readyToTransmit,
         
-        rxAck => readyToReceive
+        rxAck => readyToReceive,
+        loadData => loadInternalData
     );
 
-    outputData <= inputData;
+    outputData <= internalData;
+    
+    registerProcess: process(clock)
+    begin
+        if (clock'event and clock='1') then
+            if (reset = '1') then
+                internalData <= "00";
+            else
+                if (loadInternalData = '1') then
+                    internalData <= inputData;
+                end if;
+            end if;
+        end if;
+    end process;
 
 end structural;
