@@ -18,7 +18,7 @@ architecture structural of NonRestoringDivider is
             
             clock, reset    : in std_logic;
             
-            loadAQ, loadM, loadS   : in std_logic;
+            loadAQ, loadM   : in std_logic;
             shiftAQ         : in std_logic;
             selAQ           : in std_logic_vector(1 downto 0);
             subSignal       : in std_logic;
@@ -45,7 +45,7 @@ architecture structural of NonRestoringDivider is
         );
     end component;
     
-    signal signLink, loadMlink, loadAQlink, loadSlink, countSignallink, subSignallink, shiftAQlink: std_logic;
+    signal signLink, loadMlink, loadAQlink, countSignallink, subSignallink, shiftAQlink: std_logic;
     signal selAQlink, countLink: std_logic_vector(1 downto 0);
     
 begin
@@ -59,7 +59,6 @@ begin
         
         loadAQ => loadAQlink,
         loadM => loadMlink,
-        loadS => loadSlink,
         shiftAQ => shiftAQlink,
         selAQ => selAQlink,
         subSignal => subSignallink,
@@ -82,7 +81,6 @@ begin
         
         loadM => loadMlink,
         loadAQ => loadAQlink,
-        loadS => loadSlink,
         countSignal => countSignallink,
         subSignal => subSignallink,
         shiftAQ => shiftAQlink,

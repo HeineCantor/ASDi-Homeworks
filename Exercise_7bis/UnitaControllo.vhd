@@ -8,7 +8,7 @@ entity UnitaControllo is
         
         sign:   in std_logic;
         
-        loadM, loadAQ, loadS, countSignal, subSignal, shiftAQ: out std_logic;
+        loadM, loadAQ, countSignal, subSignal, shiftAQ: out std_logic;
         selAQ:  out std_logic_vector(1 downto 0);
         
         divisionFinished: out std_logic
@@ -17,7 +17,7 @@ end UnitaControllo;
 
 architecture Behavioral of UnitaControllo is
     
-    type state is (idle, operandPreparation, goPrepareS, goShift, goOperation, goUpdateS, goUpdate, goCount, correctionState, endState);
+    type state is (idle, operandPreparation, goShift, goOperation, goUpdate, goCount, correctionState, endState);
     signal currentState, nextState: state;
 
 begin
@@ -40,7 +40,6 @@ begin
         subSignal <= '0';
         loadM <= '0';
         loadAQ <= '0';
-        loadS <= '0';
         shiftAQ <= '0';
         selAQ <= "01";
         
@@ -57,11 +56,6 @@ begin
             WHEN operandPreparation =>
                 loadM <= '1';
                 loadAQ <= '1';
-                
-                nextState <= goPrepareS;
-                
-            WHEN goPrepareS =>
-                loadS <= '1';
                 
                 nextState <= goShift;
                 
@@ -81,12 +75,7 @@ begin
                     loadAQ <= '1';
                 end if;
                 
-                nextState <= goUpdateS;
-                
-            WHEN goUpdateS =>
-                loadS <= '1';
-                
-                nextState <= goUpdate;            
+                nextState <= goUpdate;        
                 
             WHEN goUpdate =>
                 selAQ <= "11";

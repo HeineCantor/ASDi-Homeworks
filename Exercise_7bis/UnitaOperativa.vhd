@@ -7,7 +7,7 @@ entity UnitaOperativa is
         
         clock, reset    : in std_logic;
         
-        loadAQ, loadM, loadS   : in std_logic;
+        loadAQ, loadM   : in std_logic;
         shiftAQ         : in std_logic;
         selAQ           : in std_logic_vector(1 downto 0);
         subSignal       : in std_logic;
